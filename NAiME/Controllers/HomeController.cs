@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace NAiME.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()

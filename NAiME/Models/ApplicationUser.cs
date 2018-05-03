@@ -10,7 +10,7 @@ namespace NAiME.Models
     public class ApplicationUser : IdentityUser
     {
 
-        [StringLength(1000)]
+        [StringLength(200)]
         public string UserToken { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
