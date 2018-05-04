@@ -1,0 +1,68 @@
+﻿@model NAiME.Models.Character
+@{
+
+}
+
+@using (Html.BeginForm("Save", "Characters"))
+{
+    <p>*Required Fields</p>
+    @Html.ValidationSummary()
+
+    <!--Character Name-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)*
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <!--Stats: Strength-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Strength)*
+        @Html.TextBoxFor(m => m.Strength, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Strength)
+    </div>
+
+    <!--Stats: Dexterity-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dexterity)*
+        @Html.TextBoxFor(m => m.Dexterity, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Dexterity)
+    </div>
+
+    <!--Stats: Constitution-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Constitution)*
+        @Html.TextBoxFor(m => m.Constitution, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Constitution)
+    </div>
+
+    <!--Stats: Intelligence-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Intelligence)*
+        @Html.TextBoxFor(m => m.Intelligence, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Intelligence)
+    </div>
+
+    <!--Stats: Wisdom-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Wisdom)*
+        @Html.TextBoxFor(m => m.Wisdom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Wisdom)
+    </div>
+
+    <!--Stats: Charisma-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Charisma)*
+        @Html.TextBoxFor(m => m.Charisma, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Charisma)
+    </div>
+
+    <!--ProficiencyBonus-->
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProficiencyBonus)*
+        @Html.TextBoxFor(m => m.ProficiencyBonus, new { type = "number", min = "0", max = "4", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ProficiencyBonus)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}

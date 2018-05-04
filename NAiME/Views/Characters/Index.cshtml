@@ -1,0 +1,27 @@
+﻿@using NAiME.Models
+@model IEnumerable<NAiME.Models.Character>
+
+<h1>Characters</h1>
+<input value="New Character" type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("New","Characters")'" />
+
+@{
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Player Token</th>
+            <th>Character Token</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var character in Model)
+        {
+            <tr>
+                <td>@character.Name</td>
+                <td>@character.PlayerToken</td>
+                <td>@character.CharacterToken</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

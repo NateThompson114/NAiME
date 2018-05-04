@@ -10,10 +10,13 @@ namespace NAiME.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(200)]
+        [Required]
+        public string Name { get; set; }
+
+        [StringLength(200)]
         public string CharacterToken { get; set; }
 
-        [Required, StringLength(200)]
+        [StringLength(200)]
         public string PlayerToken { get; set; }
 
         [StringLength(200)]
@@ -43,7 +46,8 @@ namespace NAiME.Models
         [Required]
         public int PermanentShadow { get; set; }
 
-        [Required] public int ProficiencyBonus { get; set; }
+        [Required]
+        public int ProficiencyBonus { get; set; }
 
         public bool Inspiration { get; set; }
 
