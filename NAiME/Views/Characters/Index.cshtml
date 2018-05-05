@@ -1,5 +1,5 @@
 ﻿@using NAiME.Models
-@model IEnumerable<NAiME.Models.Character>
+@model IEnumerable<NAiME.Models.Character.Character>
 
 <h1>Characters</h1>
 <input value="New Character" type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("New","Characters")'" />
@@ -14,13 +14,25 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var character in Model)
-        {
-            <tr>
-                <td>@character.Name</td>
-                <td>@character.PlayerToken</td>
-                <td>@character.CharacterToken</td>
-            </tr>
+        @{
+            if (Model.Any())
+            {
+                foreach (var character in Model)
+                {
+                    <tr>
+                        <td>@character.Name</td>
+                        <td>@character.CharacterMainStats.Strength</td>
+                        <td>@character.CharacterMainStats.Dexterity</td>
+                        <td>@character.CharacterMainStats.Constitution</td>
+                        <td>@character.CharacterMainStats.Intelligence</td>
+                        <td>@character.CharacterMainStats.Wisdom</td>
+                        <td>@character.CharacterMainStats.Charisma</td>
+                        <td>@character.CharacterMainStats.Shadow</td>
+                        <td>@character.PlayerToken</td>
+                        <td>@character.CharacterToken</td>
+                    </tr>
+                }
+            }
         }
         </tbody>
     </table>

@@ -4,24 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace NAiME.Models
+namespace NAiME.Models.Character
 {
-    public class Character
+    public class CharacterMainStats
     {
-        public int Id { get; set; }
-
-        [Required]
-        public string Name { get; set; }
-
-        [StringLength(200)]
-        public string CharacterToken { get; set; }
-
-        [StringLength(200)]
-        public string PlayerToken { get; set; }
-
-        [StringLength(200)]
-        public string GroupToken { get; set; }
-
         [Required]
         public int Strength { get; set; }
 
@@ -42,14 +28,5 @@ namespace NAiME.Models
 
         [Required]
         public int Shadow { get; set; }
-
-        [Required]
-        public int PermanentShadow { get; set; }
-
-        [Required]
-        public int ProficiencyBonus { get; set; }
-
-        public bool Inspiration { get; set; }
-
     }
 }

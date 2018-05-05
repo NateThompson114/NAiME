@@ -215,7 +215,11 @@
       <DependentUpon>201805040125027_CharacterCreationInitialBuild.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Character\Character.cs" />
+    <Compile Include="Models\Character\CharacterLevel.cs" />
+    <Compile Include="Models\Character\CharacterMainStats.cs" />
+    <Compile Include="Models\Character\CharacterSavingThrows.cs" />
+    <Compile Include="Models\Character\CharacterSkills.cs" />
     <Compile Include="Tools\Sha.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -268,6 +272,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\NAiME20180503102307 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using NAiME.Models;
+using NAiME.Models.Character;
 using NAiME.Tools;
 
 namespace NAiME.Controllers
@@ -21,11 +22,12 @@ namespace NAiME.Controllers
         // GET: Character
         public ActionResult Index()
         {
-            //return Content(User.Identity.GetUserId());
             var currentUser = User.Identity.GetUserId();
             var user = _context.Users.SingleOrDefault(u => u.Id == currentUser.ToString());
+            
+            var characters = _context.Characters.ToList()
+                .Where(c => user != null && c.PlayerToken == user.UserToken);
 
-            var characters = _context.Characters.ToList().Where(c => c.PlayerToken == user.UserToken);
             return View(characters);
         }
 
@@ -39,10 +41,8 @@ namespace NAiME.Controllers
         {
             var currentUser = User.Identity.GetUserId();
             var user = _context.Users.Single(u => u.Id == currentUser);
-            
+
             character.PlayerToken = user.UserToken;
-            character.Shadow = 0;
-            character.PermanentShadow = 0;
             character.Inspiration = false;
 
             var characterInDb = _context.Characters.Add(character);
