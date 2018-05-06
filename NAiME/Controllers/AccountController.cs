@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using NAiME.Models;
@@ -146,7 +147,11 @@ namespace NAiME.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser
+            {
+                UserName = model.UserName,
+                Email = model.Email
+            };
             var result = await UserManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)

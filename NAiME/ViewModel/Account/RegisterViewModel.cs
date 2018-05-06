@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using NAiME.Models;
 
 namespace NAiME.ViewModel.Account
 {
     public class RegisterViewModel
     {
+        [Required, StringLength(200), UserNameUniqueCheck]
+        public string UserName { get; set; }
+
         [Required, EmailAddress, Display(Name = "Email")]
         public string Email { get; set; }
 

@@ -53,165 +53,175 @@
         </tbody>
     </table>
     
-
-    <h3>Stats</h3>
-    <!--Stats: Strength-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.CharacterMainStats.Strength)*
-        @Html.TextBoxFor(m => m.CharacterMainStats.Strength, new { type="number", min=8, max=20, @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Strength)
-    </div>
-
-    <!--Stats: Dexterity-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.CharacterMainStats.Dexterity)*
-        @Html.TextBoxFor(m => m.CharacterMainStats.Dexterity, new { type = "number", min = 8, max = 20, @class = "form-control"})
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Dexterity)
-    </div>
-
-    <!--Stats: Constitution-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.CharacterMainStats.Constitution)*
-        @Html.TextBoxFor(m => m.CharacterMainStats.Constitution, new { type = "number", min = 8, max = 20, @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Constitution)
-    </div>
-
-    <!--Stats: Intelligence-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.CharacterMainStats.Intelligence)*
-        @Html.TextBoxFor(m => m.CharacterMainStats.Intelligence, new { type = "number", min = 8, max = 20, @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Intelligence)
-    </div>
-
-    <!--Stats: Wisdom-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.CharacterMainStats.Wisdom)*
-        @Html.TextBoxFor(m => m.CharacterMainStats.Wisdom, new { type = "number", min = 8, max = 20, @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Wisdom)
-    </div>
-
-    <!--Stats: Charisma-->
-    <div class="form-group">
-        @Html.LabelFor(m => m.CharacterMainStats.Charisma)*
-        @Html.TextBoxFor(m => m.CharacterMainStats.Charisma, new { type = "number", min = 8, max = 20, @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Charisma)
-    </div>
-
-    if (Model.Id > 0)
-    {
-         <!--Stats: Shadow-->
-         <div class="form-group">
-             @Html.LabelFor(m => m.CharacterMainStats.Shadow)*
-             @Html.TextBoxFor(m => m.CharacterMainStats.Shadow, new { type = "number", min = 0, max = 4, @class = "form-control" })
-             @Html.ValidationMessageFor(m => m.CharacterMainStats.Shadow)
-         </div>
-    }
-
-    <h3>Saving Throws</h3>
-    <!--Saving Throws-->
-    <table class="table-bordered table-condensed">
-        <thead>
-        <tr>
-            <th>Skill</th>
-            <th>Proficient</th>
-            <th>Multiplier</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <!--Strength-->
+    <table>
         <tr>
             <td>
-                Strength
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowStrength, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowStrengthMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
-        
-        <!--Dexterity-->
-        <tr>
-            <td>
-                Dexterity
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterity, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterityMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
-        
-        <!--Constitution-->
-        <tr>
-            <td>
-                Constitution
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitution, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitutionMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
-        
-        <!--Intelligence-->
-        <tr>
-            <td>
-                Intelligence
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligence, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligenceMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
-        
-        <!--Wisdom-->
-        <tr>
-            <td>
-                Wisdom
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdom, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdomMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
-        
-        <!--Charisma-->
-        <tr>
-            <td>
-                Charisma
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCharisma, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCharismaMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
-        
-        <!--Shadow-->
-        <tr>
-            <td>
-                Corruption
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruption, new {@class = "form-control"})
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruptionMultiplier, new {type = "number", min = 1, max = 4, @class = "form-control"})
-            </td>
-        </tr>
+                <h3>Stats</h3>
+                <!--Stats: Strength-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CharacterMainStats.Strength)*
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Strength, new { type = "number", min = 8, max = 20, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Strength)
+                </div>
 
-        </tbody>
+                <!--Stats: Dexterity-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CharacterMainStats.Dexterity)*
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Dexterity, new { type = "number", min = 8, max = 20, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Dexterity)
+                </div>
+
+                <!--Stats: Constitution-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CharacterMainStats.Constitution)*
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Constitution, new { type = "number", min = 8, max = 20, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Constitution)
+                </div>
+
+                <!--Stats: Intelligence-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CharacterMainStats.Intelligence)*
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Intelligence, new { type = "number", min = 8, max = 20, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Intelligence)
+                </div>
+
+                <!--Stats: Wisdom-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CharacterMainStats.Wisdom)*
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Wisdom, new { type = "number", min = 8, max = 20, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Wisdom)
+                </div>
+
+                <!--Stats: Charisma-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CharacterMainStats.Charisma)*
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Charisma, new { type = "number", min = 8, max = 20, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Charisma)
+                </div>
+
+                @if (Model.Id > 0)
+                {
+                    <!--Stats: Shadow-->
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CharacterMainStats.Shadow)*
+                        @Html.TextBoxFor(m => m.CharacterMainStats.Shadow, new { type = "number", min = 0, max = 4, @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CharacterMainStats.Shadow)
+                    </div>
+                }
+            </td>
+            <td style="width: 100px"></td>
+            <td style="vertical-align: top">
+                <h3>Saving Throws</h3>
+                <!--Saving Throws-->
+                <table class="table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Proficient</th>
+                            <th>Multiplier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!--Strength-->
+                        <tr>
+                            <td>
+                                Strength
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowStrength, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowStrengthMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                        <!--Dexterity-->
+                        <tr>
+                            <td>
+                                Dexterity
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterity, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterityMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                        <!--Constitution-->
+                        <tr>
+                            <td>
+                                Constitution
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitution, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitutionMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                        <!--Intelligence-->
+                        <tr>
+                            <td>
+                                Intelligence
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligence, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligenceMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                        <!--Wisdom-->
+                        <tr>
+                            <td>
+                                Wisdom
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdom, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdomMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                        <!--Charisma-->
+                        <tr>
+                            <td>
+                                Charisma
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCharisma, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCharismaMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                        <!--Shadow-->
+                        <tr>
+                            <td>
+                                Corruption
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruption, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruptionMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
     </table>
+    
+
+    
 
     <h3>Skills</h3>
     <table class="table-bordered table-condensed">

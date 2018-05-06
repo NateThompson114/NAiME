@@ -219,12 +219,21 @@
     <Compile Include="Migrations\201805051950336_AddedAdditionalCharacterFields.Designer.cs">
       <DependentUpon>201805051950336_AddedAdditionalCharacterFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805062204041_addNameToUser.cs" />
+    <Compile Include="Migrations\201805062204041_addNameToUser.Designer.cs">
+      <DependentUpon>201805062204041_addNameToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805062207342_removedNameAddedUserName.cs" />
+    <Compile Include="Migrations\201805062207342_removedNameAddedUserName.Designer.cs">
+      <DependentUpon>201805062207342_removedNameAddedUserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Character\Character.cs" />
     <Compile Include="Models\Character\CharacterLevel.cs" />
     <Compile Include="Models\Character\CharacterMainStats.cs" />
     <Compile Include="Models\Character\CharacterSavingThrows.cs" />
     <Compile Include="Models\Character\CharacterSkills.cs" />
+    <Compile Include="Models\UserNameUniqueCheck.cs" />
     <Compile Include="Tools\Sha.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -620,6 +629,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805051950336_AddedAdditionalCharacterFields.resx">
       <DependentUpon>201805051950336_AddedAdditionalCharacterFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805062204041_addNameToUser.resx">
+      <DependentUpon>201805062204041_addNameToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805062207342_removedNameAddedUserName.resx">
+      <DependentUpon>201805062207342_removedNameAddedUserName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
