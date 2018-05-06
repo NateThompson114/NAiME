@@ -30,7 +30,7 @@ namespace NAiME.Models.Character
         //Saving Throws
         public CharacterSavingThrows CharacterSavingThrows { get; set; }
 
-        //Skils
+        //Skills
         public CharacterSkills CharacterSkills { get; set; }
 
         //Level

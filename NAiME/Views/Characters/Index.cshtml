@@ -1,39 +1,76 @@
 ﻿@using NAiME.Models
-@model IEnumerable<NAiME.Models.Character.Character>
+@model NAiME.Models.ApplicationUser
 
-<h1>Characters</h1>
-<input value="New Character" type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("New","Characters")'" />
+<table style="width: 100%" class="container">
+    <tr>
+        <td>
+            <h1>Characters</h1>
+        </td>
+        <td>
+            <input value="New Character" type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("New","Characters")'" />
+        </td>
+    </tr>
+</table>
 
 @{
-    <table class="table table-hover">
+    var userToken = Model.UserToken;
+    var tableHeaders = new List<string> { "Name", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma", "Shadow", "Player Token", "Character Token" };
+    <table id="characterDataTable" class="table table-hover">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Player Token</th>
-            <th>Character Token</th>
+            @foreach(var header in tableHeaders) { <th scope="col">@header</th>}
         </tr>
         </thead>
         <tbody>
-        @{
-            if (Model.Any())
-            {
-                foreach (var character in Model)
-                {
-                    <tr>
-                        <td>@character.Name</td>
-                        <td>@character.CharacterMainStats.Strength</td>
-                        <td>@character.CharacterMainStats.Dexterity</td>
-                        <td>@character.CharacterMainStats.Constitution</td>
-                        <td>@character.CharacterMainStats.Intelligence</td>
-                        <td>@character.CharacterMainStats.Wisdom</td>
-                        <td>@character.CharacterMainStats.Charisma</td>
-                        <td>@character.CharacterMainStats.Shadow</td>
-                        <td>@character.PlayerToken</td>
-                        <td>@character.CharacterToken</td>
-                    </tr>
-                }
-            }
-        }
         </tbody>
     </table>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $("#characterDataTable").DataTable({
+                ajax: {
+                    url: "/api/characters?query=@userToken",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        render: function(data, type, character) {
+                            return "<a href='/characters/edit?query=" + character.characterToken + "'>" + character.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "characterMainStats.strength"
+                    },
+                    {
+                        data: "characterMainStats.dexterity"
+                    },
+                    {
+                        data: "characterMainStats.constitution"
+                    },
+                    {
+                        data: "characterMainStats.intelligence"
+                    },
+                    {
+                        data: "characterMainStats.wisdom"
+                    },
+                    {
+                        data: "characterMainStats.charisma"
+                    },
+                    {
+                        data: "characterMainStats.shadow"
+                    },
+                    {
+                        data: "playerToken"
+                    },
+                    {
+                        data: "characterToken"
+                    }
+                ]
+            });
+        });
+
+    </script>>
 }

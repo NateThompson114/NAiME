@@ -23,32 +23,105 @@ namespace NAiME.Controllers
         public ActionResult Index()
         {
             var currentUser = User.Identity.GetUserId();
-            var user = _context.Users.SingleOrDefault(u => u.Id == currentUser.ToString());
+            var user = _context.Users.SingleOrDefault(u => u.Id == currentUser);
             
-            var characters = _context.Characters.ToList()
-                .Where(c => user != null && c.PlayerToken == user.UserToken);
+            //var characters = _context.Characters.ToList()
+            //    .Where(c => user != null && c.PlayerToken == user.UserToken);
 
-            return View(characters);
+            return View(user);
         }
 
         public ActionResult New()
         {
-            return View();
+            var viewModel = new Character
+            {
+                CharacterMainStats = new CharacterMainStats
+                {
+                    Charisma = 8,
+                    Constitution = 8,
+                    Dexterity = 8,
+                    Intelligence = 8,
+                    Shadow = 8,
+                    Strength = 8,
+                    Wisdom = 8
+                },
+                CharacterSkills = new CharacterSkills(),
+                CharacterSavingThrows = new CharacterSavingThrows
+                {
+                    SavingThrowStrengthMultiplier = 1,
+                    SavingThrowCharismaMultiplier = 1,
+                    SavingThrowConstitutionMultiplier = 1,
+                    SavingThrowCorruptionMultiplier = 1,
+                    SavingThrowDexterityMultiplier = 1,
+                    SavingThrowIntelligenceMultiplier = 1,
+                    SavingThrowWisdomMultiplier = 1
+                },
+                CharacterLevel = new CharacterLevel()
+            };
+            return View("Save", viewModel);
         }
 
-        [HttpPost]
+        public ActionResult Edit(string query)
+        {
+            var characterInDb = _context.Characters.Single(c => c.CharacterToken == query);
+
+            if (characterInDb == null)
+                return HttpNotFound();
+
+            var viewData = new Character();
+            viewData = characterInDb;
+
+            return View("Save", viewData);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Save(Character character)
         {
-            var currentUser = User.Identity.GetUserId();
-            var user = _context.Users.Single(u => u.Id == currentUser);
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new Character
+                {
+                    CharacterLevel = character.CharacterLevel,
+                    CharacterMainStats = character.CharacterMainStats,
+                    CharacterSavingThrows = character.CharacterSavingThrows,
+                    CharacterSkills = character.CharacterSkills,
+                    CharacterToken = character.CharacterToken,
+                    ExperiencePoints = character.ExperiencePoints,
+                    GroupToken = character.GroupToken,
+                    Id = character.Id,
+                    Inspiration = character.Inspiration,
+                    Name = character.Name
+                };
+                return View("Save", viewModel);
+            }
 
-            character.PlayerToken = user.UserToken;
-            character.Inspiration = false;
+            if (character.Id == 0)
+            {
+                var currentUser = User.Identity?.GetUserId();
 
-            var characterInDb = _context.Characters.Add(character);
-            _context.SaveChanges();
+                var user = _context.Users.Single(u => u.Id == currentUser);
 
-            characterInDb.CharacterToken = characterInDb.Id.ToString().HashThis(SHA512.Create());
+                character.PlayerToken = user.UserToken;
+                character.Inspiration = false;
+
+                var characterInDb = _context.Characters.Add(character);
+                _context.SaveChanges();
+
+                characterInDb.CharacterToken = characterInDb.Id.ToString().HashThis(SHA512.Create());
+            }
+            else
+            {
+                var characterInDb = _context.Characters.Single(c => c.Id == character.Id);
+
+                characterInDb.Name = character.Name;
+                characterInDb.ExperiencePoints = character.ExperiencePoints;
+                characterInDb.Inspiration = character.Inspiration;
+                characterInDb.CharacterMainStats = character.CharacterMainStats;
+                characterInDb.CharacterSavingThrows = character.CharacterSavingThrows;
+                characterInDb.CharacterSkills = character.CharacterSkills;
+                characterInDb.CharacterLevel = character.CharacterLevel;
+            }
+
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Characters");

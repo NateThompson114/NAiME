@@ -21,3 +21,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Validation Coloring*/
+.input-validation-error {
+    border: 2px solid red
+}
+
+.field-validation-error {
+    color: red
+}
+
+/*Logout Form*/
+.logoutLink {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

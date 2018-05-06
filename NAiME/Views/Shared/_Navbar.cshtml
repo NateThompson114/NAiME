@@ -18,7 +18,17 @@
                     @Html.ActionLink("Contact", "Contact", "Home", new {area = ""}, new {@class = "nav-link"})
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Characters", "Index", "Characters", new { area = "" }, new { @class = "nav-link" })
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        @Html.ActionLink("Characters", "Index", "Characters", new { area = "" }, new {type="button", @class = "btn btn-primary" })
+                        @*<button type="button" class="btn btn-primary">Primary</button>*@
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 36px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                @Html.ActionLink("New", "New", "Characters", new { area = "" }, new {@class = "dropdown-item" })
+                                @*<a class="dropdown-item" href="#">Dropdown link</a>*@
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

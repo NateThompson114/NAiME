@@ -11,7 +11,9 @@ namespace NAiME
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
-                        "~/Scripts/respond.js"
+                        "~/Scripts/respond.js",
+                        "~/Scripts/DataTables/media/js/jquery.datatables.js",
+                        "~/Scripts/DataTables/media/js/datatables.bootstrap4.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -24,6 +26,7 @@ namespace NAiME
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-sandstone.css",
+                      "~/Content/DataTables/media/css/datatables.bootstrap4.css",
                       "~/Content/site.css"));
         }
     }
