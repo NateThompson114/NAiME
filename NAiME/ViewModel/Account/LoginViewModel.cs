@@ -4,7 +4,7 @@ namespace NAiME.ViewModel.Account
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required, Display(Name = "Username or Email")]
         public string UserName { get; set; }
 
         //[Required, Display(Name = "Email"), EmailAddress]

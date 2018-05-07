@@ -68,6 +68,10 @@ namespace NAiME.Controllers
                 return View(model);
             }
 
+            if (model.UserName.Contains("@"))
+            {
+                model.UserName = _context.Users.Single(u => u.Email == model.UserName).UserName;
+            }
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
