@@ -14,7 +14,7 @@
 
 @{
     var userToken = Model.UserToken;
-    var tableHeaders = new List<string> { "Name", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma", "Shadow", "Player Token", "Character Token" };
+    var tableHeaders = new List<string> { "Name", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma", "Shadow", "Character Token" };
     <table id="characterDataTable" class="table table-hover">
         <thead>
         <tr>
@@ -61,9 +61,6 @@
                     },
                     {
                         data: "characterMainStats.shadow"
-                    },
-                    {
-                        data: "playerToken"
                     },
                     {
                         data: "characterToken"
