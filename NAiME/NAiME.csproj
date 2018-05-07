@@ -227,7 +227,12 @@
     <Compile Include="Migrations\201805062207342_removedNameAddedUserName.Designer.cs">
       <DependentUpon>201805062207342_removedNameAddedUserName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805070201383_AddingChangeLog.cs" />
+    <Compile Include="Migrations\201805070201383_AddingChangeLog.Designer.cs">
+      <DependentUpon>201805070201383_AddingChangeLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\Character.cs" />
     <Compile Include="Models\Character\CharacterLevel.cs" />
     <Compile Include="Models\Character\CharacterMainStats.cs" />
@@ -605,6 +610,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Characters\Save.cshtml" />
     <Content Include="Views\Characters\Index.cshtml" />
+    <Content Include="Views\Home\ChangeLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -635,6 +641,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805062207342_removedNameAddedUserName.resx">
       <DependentUpon>201805062207342_removedNameAddedUserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805070201383_AddingChangeLog.resx">
+      <DependentUpon>201805070201383_AddingChangeLog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

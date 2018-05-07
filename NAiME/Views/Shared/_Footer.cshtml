@@ -1,3 +1,12 @@
 ﻿<footer>
-    <p>&copy; @DateTime.Now.Year - NAiME by Nate Thompson</p>
+    <table class="table">
+        <tr>
+            <td>
+                <p>&copy; @DateTime.Now.Year - NAiME by Nate Thompson</p>
+            </td>
+            <td>
+                @Html.ActionLink("Change Log", "ChangeLog", "Home", null, new {@class="nav-link"})
+            </td>
+        </tr>
+    </table>
 </footer>
