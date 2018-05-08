@@ -1,0 +1,107 @@
+﻿@using NAiME.Models.Character
+@model NAiME.Models.Character.Character
+
+<!--Saving Throws-->
+<table class="table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>Skill</th>
+            <th>Proficient</th>
+            <th>Multiplier</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <!--Strength-->
+        <tr>
+            <td>
+                Strength
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowStrength, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowStrengthMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+        <!--Dexterity-->
+        <tr>
+            <td>
+                Dexterity
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterity, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterityMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+        <!--Constitution-->
+        <tr>
+            <td>
+                Constitution
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitution, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitutionMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+        <!--Intelligence-->
+        <tr>
+            <td>
+                Intelligence
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligence, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligenceMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+        <!--Wisdom-->
+        <tr>
+            <td>
+                Wisdom
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdom, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdomMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+        <!--Charisma-->
+        <tr>
+            <td>
+                Charisma
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCharisma, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCharismaMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+        <!--Shadow-->
+        <tr>
+            <td>
+                Corruption
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruption, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruptionMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
+            </td>
+        </tr>
+
+    </tbody>
+</table>

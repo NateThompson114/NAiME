@@ -17,401 +17,253 @@
     <table>
 
         <tbody>
-        <tr>
-            <td>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Name)*
-                    @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
-                    @Html.ValidationMessageFor(m => m.Name)
-                </div>
-            </td>
-            <td>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterLevel.Level)*
-                    @Html.TextBoxFor(m => m.CharacterLevel.Level, new { type="number", min="0", max="20", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
-                </div>
-            </td>
-            <td>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)*
-                    @Html.TextBoxFor(m => m.CharacterLevel.ExperiencePoints, new { type="number", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterLevel.ExperiencePoints)
-                </div>
-            </td>
-            @if (Model.Id > 0)
-            {
+            <tr>
                 <td>
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Inspiration)*
-                        @Html.CheckBoxFor(m => m.Inspiration, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Inspiration)
+                        @Html.LabelFor(m => m.Name)*
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name)
                     </div>
                 </td>
-            }
-        </tr>
+                <td>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CharacterLevel.Level)*
+                        @Html.TextBoxFor(m => m.CharacterLevel.Level, new { type = "number", min = "0", max = "20", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)*
+                        @Html.TextBoxFor(m => m.CharacterLevel.ExperiencePoints, new { type = "number", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CharacterLevel.ExperiencePoints)
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
-    
-    <table>
-        <tr>
-            <td>
-                <h3>Stats</h3>
-                <!--Stats: Strength-->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterMainStats.Strength)*
-                    @Html.TextBoxFor(m => m.CharacterMainStats.Strength, new { type = "number", min = 8, max = 20, @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Strength)
-                </div>
-
-                <!--Stats: Dexterity-->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterMainStats.Dexterity)*
-                    @Html.TextBoxFor(m => m.CharacterMainStats.Dexterity, new { type = "number", min = 8, max = 20, @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Dexterity)
-                </div>
-
-                <!--Stats: Constitution-->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterMainStats.Constitution)*
-                    @Html.TextBoxFor(m => m.CharacterMainStats.Constitution, new { type = "number", min = 8, max = 20, @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Constitution)
-                </div>
-
-                <!--Stats: Intelligence-->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterMainStats.Intelligence)*
-                    @Html.TextBoxFor(m => m.CharacterMainStats.Intelligence, new { type = "number", min = 8, max = 20, @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Intelligence)
-                </div>
-
-                <!--Stats: Wisdom-->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterMainStats.Wisdom)*
-                    @Html.TextBoxFor(m => m.CharacterMainStats.Wisdom, new { type = "number", min = 8, max = 20, @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Wisdom)
-                </div>
-
-                <!--Stats: Charisma-->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterMainStats.Charisma)*
-                    @Html.TextBoxFor(m => m.CharacterMainStats.Charisma, new { type = "number", min = 8, max = 20, @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Charisma)
-                </div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 text-center">
+                @Html.Partial("Partials/Save/_saveStats")
+            </div>
+            <div class="col-md-4">
                 @if (Model.Id > 0)
                 {
-                    <!--Stats: Shadow-->
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.CharacterMainStats.Shadow)*
-                        @Html.TextBoxFor(m => m.CharacterMainStats.Shadow, new { type = "number", min = 0, max = 4, @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.CharacterMainStats.Shadow)
+                    <div class="form-control">
+                        @Html.CheckBoxFor(m => m.Inspiration, new { @class = "" })
+                        @Html.LabelFor(m => m.Inspiration)
+                        @Html.ValidationMessageFor(m => m.Inspiration)
                     </div>
                 }
-            </td>
-            <td style="width: 100px"></td>
-            <td style="vertical-align: top">
                 <h3>Saving Throws</h3>
-                <!--Saving Throws-->
-                <table class="table-bordered table-condensed">
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Proficient</th>
-                            <th>Multiplier</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <!--Strength-->
-                        <tr>
-                            <td>
-                                Strength
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowStrength, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowStrengthMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                        <!--Dexterity-->
-                        <tr>
-                            <td>
-                                Dexterity
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterity, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterityMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                        <!--Constitution-->
-                        <tr>
-                            <td>
-                                Constitution
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitution, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitutionMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                        <!--Intelligence-->
-                        <tr>
-                            <td>
-                                Intelligence
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligence, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligenceMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                        <!--Wisdom-->
-                        <tr>
-                            <td>
-                                Wisdom
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdom, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdomMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                        <!--Charisma-->
-                        <tr>
-                            <td>
-                                Charisma
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCharisma, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCharismaMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                        <!--Shadow-->
-                        <tr>
-                            <td>
-                                Corruption
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruption, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruptionMultiplier, new { type = "number", min = 1, max = 4, @class = "form-control" })
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </td>
+                @Html.Partial("Partials/Save/_saveThrows")
+            </div>
+            <div class="col-md-6">
+                <h3>Armor / Hit Points /Etc</h3>
+            </div>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <td class="col-sm-2"></td>
+            <td class="col-sm-4" style="vertical-align: top;"></td>
+            <td class="col-sm-6">&nbsp;</td>
         </tr>
     </table>
-    
 
-    
+
+
 
     <h3>Skills</h3>
     <table class="table-bordered table-condensed">
         <thead>
-        <tr>
-            <th>Skill</th>
-            <th>Proficient</th>
-        </tr>
+            <tr>
+                <th>Skill</th>
+                <th>Proficient</th>
+            </tr>
         </thead>
         <tbody>
 
-        <tr>
-            <td>
-                Acrobatics
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Animal Handling
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.AnimalHandlingWis, new {@class = "form-control"})
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    Acrobatics
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control" })
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                Athletics
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.AthleticsStr, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Deception
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.DeceptionCha, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                History
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.HistoryInt, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Insight
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.InsightWis, new {@class = "form-control"})
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    Animal Handling
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.AnimalHandlingWis, new { @class = "form-control" })
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                Intimidation
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.IntimidationCha, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Investigation
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.InvestigationInt, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Lore
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.LoreInt, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Medicine
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.MedicineWis, new {@class = "form-control"})
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    Athletics
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.AthleticsStr, new { @class = "form-control" })
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                Nature
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.NatureInt, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Perception
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.PerceptionWis, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Performance
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.PerformanceCha, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Persuasion
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.PersuasionCha, new {@class = "form-control"})
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    Deception
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.DeceptionCha, new { @class = "form-control" })
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                Riddle
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.RiddleInt, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Shadow Lore
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.ShadowLoreInt, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Sleight of Hand
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.SleightOfHandDex, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Stealth
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.StealthDex, new {@class = "form-control"})
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    History
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.HistoryInt, new { @class = "form-control" })
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                Survival
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.SurvivalWis, new {@class = "form-control"})
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                Traditions
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.TraditionsInt, new {@class = "form-control"})
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    Insight
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.InsightWis, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Intimidation
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.IntimidationCha, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Investigation
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.InvestigationInt, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Lore
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.LoreInt, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Medicine
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.MedicineWis, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Nature
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.NatureInt, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Perception
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.PerceptionWis, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Performance
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.PerformanceCha, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Persuasion
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.PersuasionCha, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Riddle
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.RiddleInt, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Shadow Lore
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.ShadowLoreInt, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Sleight of Hand
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.SleightOfHandDex, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Stealth
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.StealthDex, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Survival
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.SurvivalWis, new { @class = "form-control" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Traditions
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CharacterSkills.TraditionsInt, new { @class = "form-control" })
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -423,4 +275,29 @@
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            var cards = $(".cardStatTarget");
+            setInterval(function () {
+                $("#strCardEnd").val(
+                    Math.floor(($("#strCardStart").val() - 10) / 2)
+                );
+                $("#dexCardEnd").val(
+                    Math.floor(($("#dexCardStart").val() - 10) / 2)
+                );
+                $("#conCardEnd").val(
+                    Math.floor(($("#conCardStart").val() - 10) / 2)
+                );
+                $("#intCardEnd").val(
+                    Math.floor(($("#intCardStart").val() - 10) / 2)
+                );
+                $("#wisCardEnd").val(
+                    Math.floor(($("#wisCardStart").val() - 10) / 2)
+                );
+                $("#chaCardEnd").val(
+                    Math.floor(($("#chaCardStart").val() - 10) / 2)
+                );
+            }, 200);
+        });
+    </script>
 }

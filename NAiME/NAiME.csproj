@@ -611,6 +611,8 @@
     <Content Include="Views\Characters\Save.cshtml" />
     <Content Include="Views\Characters\Index.cshtml" />
     <Content Include="Views\Home\ChangeLog.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveStats.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveThrows.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
