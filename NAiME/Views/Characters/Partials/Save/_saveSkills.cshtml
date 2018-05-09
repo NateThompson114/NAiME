@@ -2,194 +2,195 @@
 @model NAiME.Models.Character.Character
 
 <h3>Skills</h3>
-<table class="table-bordered table-condensed">
+<table class="table table-bordered table-hover">
     <thead>
-        <tr>
-            <th>Skill</th>
-            <th>Proficient</th>
-        </tr>
+    <tr>
+        <th>Proficient</th>
+        <th>Value</th>
+        <th>Skill</th>
+    </tr>
     </thead>
     <tbody>
 
-        <tr>
-            <td>
-                Acrobatics
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Acrobatics-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control" })
+        </td>
+        <td><p id="acroDex">0</p></td>
+        <td>Acrobatics</td>
+    </tr>
 
-        <tr>
-            <td>
-                Animal Handling
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.AnimalHandlingWis, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Animal Handling-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.AnimalHandlingWis, new { @class = "form-control" })
+        </td>
+        <td><p id="animWis">0</p></td>
+        <td>Animal Handling</td>
+    </tr>
 
-        <tr>
-            <td>
-                Athletics
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.AthleticsStr, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Athletics-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.AthleticsStr, new { @class = "form-control" })
+        </td>
+        <td><p id="athlStr">0</p></td>
+        <td>Athletics</td>
+    </tr>
 
-        <tr>
-            <td>
-                Deception
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.DeceptionCha, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Deception-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.DeceptionCha, new { @class = "form-control" })
+        </td>
+        <td><p id="deceCha">0</p></td>
+        <td>Deception</td>
+    </tr>
 
-        <tr>
-            <td>
-                History
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.HistoryInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--History-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.HistoryInt, new { @class = "form-control" })
+        </td>
+        <td><p id="histInt">0</p></td>
+        <td>History</td>
+    </tr>
 
-        <tr>
-            <td>
-                Insight
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.InsightWis, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Insight-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.InsightWis, new { @class = "form-control" })
+        </td>
+        <td><p id="insiWis">0</p></td>
+        <td>Insight</td>
+    </tr>
 
-        <tr>
-            <td>
-                Intimidation
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.IntimidationCha, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Intimidation-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.IntimidationCha, new { @class = "form-control" })
+        </td>
+        <td><p id="intiCha">0</p></td>
+        <td>Intimidation</td>
+    </tr>
 
-        <tr>
-            <td>
-                Investigation
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.InvestigationInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Investigation-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.InvestigationInt, new { @class = "form-control" })
+        </td>
+        <td><p id="inveInt">0</p></td>
+        <td>Investigation</td>
+    </tr>
 
-        <tr>
-            <td>
-                Lore
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.LoreInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Lore-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.LoreInt, new { @class = "form-control" })
+        </td>
+        <td><p id="loreInt">0</p></td>
+        <td>Lore</td>
+    </tr>
 
-        <tr>
-            <td>
-                Medicine
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.MedicineWis, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Medicine-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.MedicineWis, new { @class = "form-control" })
+        </td>
+        <td><p id="mediWis">0</p></td>
+        <td>Medicine</td>
+    </tr>
 
-        <tr>
-            <td>
-                Nature
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.NatureInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Nature-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.NatureInt, new { @class = "form-control" })
+        </td>
+        <td><p id="natuInt">0</p></td>
+        <td>Nature</td>
+    </tr>
 
-        <tr>
-            <td>
-                Perception
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.PerceptionWis, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Perception-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.PerceptionWis, new { @class = "form-control" })
+        </td>
+        <td><p id="percWis">0</p></td>
+        <td>Perception</td>
+    </tr>
 
-        <tr>
-            <td>
-                Performance
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.PerformanceCha, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Performance-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.PerformanceCha, new { @class = "form-control" })
+        </td>
+        <td><p id="perfCha">0</p></td>
+        <td>Performance</td>
+    </tr>
 
-        <tr>
-            <td>
-                Persuasion
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.PersuasionCha, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Persuasion-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.PersuasionCha, new { @class = "form-control" })
+        </td>
+        <td><p id="persCha">0</p></td>
+        <td>Persuasion</td>
+    </tr>
 
-        <tr>
-            <td>
-                Riddle
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.RiddleInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Riddle-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.RiddleInt, new { @class = "form-control" })
+        </td>
+        <td><p id="riddInt">0</p></td>
+        <td>Riddle</td>
+    </tr>
 
-        <tr>
-            <td>
-                Shadow Lore
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.ShadowLoreInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Shadow Lore-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.ShadowLoreInt, new { @class = "form-control" })
+        </td>
+        <td><p id="shadInt">0</p></td>
+        <td>Shadow Lore</td>
+    </tr>
 
-        <tr>
-            <td>
-                Sleight of Hand
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.SleightOfHandDex, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Sleight of Hand-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.SleightOfHandDex, new { @class = "form-control" })
+        </td>
+        <td><p id="sleiDex">0</p></td>
+        <td>Sleight of Hand</td>
+    </tr>
 
-        <tr>
-            <td>
-                Stealth
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.StealthDex, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Stealth-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.StealthDex, new { @class = "form-control" })
+        </td>
+        <td><p id="steaDex">0</p></td>
+        <td>Stealth</td>
+    </tr>
 
-        <tr>
-            <td>
-                Survival
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.SurvivalWis, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Survival-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.SurvivalWis, new { @class = "form-control" })
+        </td>
+        <td><p id="survWis">0</p></td>
+        <td>Survival</td>
+    </tr>
 
-        <tr>
-            <td>
-                Traditions
-            </td>
-            <td>
-                @Html.CheckBoxFor(m => m.CharacterSkills.TraditionsInt, new { @class = "form-control" })
-            </td>
-        </tr>
+    <!--Traditions-->
+    <tr>
+        <td>
+            @Html.CheckBoxFor(m => m.CharacterSkills.TraditionsInt, new { @class = "form-control" })
+        </td>
+        <td><p id="tradInt">0</p></td>
+        <td>Traditions</td>
+    </tr>
 
     </tbody>
 </table>
