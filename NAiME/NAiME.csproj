@@ -613,6 +613,7 @@
     <Content Include="Views\Home\ChangeLog.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveStats.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveThrows.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveSkills.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

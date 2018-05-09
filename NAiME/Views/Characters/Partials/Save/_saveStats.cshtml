@@ -8,7 +8,7 @@
     <div class="card-body text-center">
         @Html.TextBoxFor(m => m.CharacterMainStats.Strength, new { type = "number", min = 8, max = 20, id="strCardStart", @class = "form-control text-center" })
         @Html.ValidationMessageFor(m => m.CharacterMainStats.Strength)
-        <input type="number" readonly id="strCardEnd" value="0" class="form-control text-center"/>
+        <p class="font-weight-bold" id="strCardEnd">0</p>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
     <div class="card-body text-center">
         @Html.TextBoxFor(m => m.CharacterMainStats.Dexterity, new { type = "number", min = 8, max = 20, id = "dexCardStart", @class = "form-control text-center cardStatTarget" })
         @Html.ValidationMessageFor(m => m.CharacterMainStats.Dexterity)
-        <input type="number" readonly id="dexCardEnd" value="0" class="form-control text-center" />
+        <p class="font-weight-bold" id="dexCardEnd">0</p>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
     <div class="card-body text-center">
         @Html.TextBoxFor(m => m.CharacterMainStats.Constitution, new { type = "number", min = 8, max = 20, id = "conCardStart", @class = "form-control text-center cardStatTarget" })
         @Html.ValidationMessageFor(m => m.CharacterMainStats.Constitution)
-        <input type="number" readonly id="conCardEnd" value="0" class="form-control text-center" />
+        <p class="font-weight-bold" id="conCardEnd">0</p>
     </div>
 </div>
 
@@ -38,7 +38,7 @@
     <div class="card-body text-center">
         @Html.TextBoxFor(m => m.CharacterMainStats.Intelligence, new { type = "number", min = 8, max = 20, id = "intCardStart", @class = "form-control text-center cardStatTarget" })
         @Html.ValidationMessageFor(m => m.CharacterMainStats.Intelligence)
-        <input type="number" readonly id="intCardEnd" value="0" class="form-control text-center" />
+        <p class="font-weight-bold" id="intCardEnd">0</p>
     </div>
 </div>
 
@@ -48,7 +48,7 @@
     <div class="card-body text-center">
         @Html.TextBoxFor(m => m.CharacterMainStats.Wisdom, new { type = "number", min = 8, max = 20, id = "wisCardStart", @class = "form-control text-center cardStatTarget" })
         @Html.ValidationMessageFor(m => m.CharacterMainStats.Wisdom)
-        <input type="number" readonly id="wisCardEnd" value="0" class="form-control text-center" />
+        <p class="font-weight-bold" id="wisCardEnd">0</p>
     </div>
 </div>
 
@@ -58,7 +58,7 @@
     <div class="card-body text-center">
         @Html.TextBoxFor(m => m.CharacterMainStats.Charisma, new { type = "number", min = 8, max = 20, id = "chaCardStart", @class = "form-control text-center cardStatTarget" })
         @Html.ValidationMessageFor(m => m.CharacterMainStats.Charisma)
-        <input type="number" readonly id="chaCardEnd" value="0" class="form-control text-center" />
+        <p class="font-weight-bold" id="chaCardEnd">0</p>
     </div>
 </div>
 @if (Model.Id > 0)
