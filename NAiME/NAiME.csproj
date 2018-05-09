@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201805070201383_AddingChangeLog.Designer.cs">
       <DependentUpon>201805070201383_AddingChangeLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805090326358_expandedVersionNumberOnChangeLog.cs" />
+    <Compile Include="Migrations\201805090326358_expandedVersionNumberOnChangeLog.Designer.cs">
+      <DependentUpon>201805090326358_expandedVersionNumberOnChangeLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\Character.cs" />
@@ -647,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805070201383_AddingChangeLog.resx">
       <DependentUpon>201805070201383_AddingChangeLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805090326358_expandedVersionNumberOnChangeLog.resx">
+      <DependentUpon>201805090326358_expandedVersionNumberOnChangeLog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,7 +10,7 @@ namespace NAiME.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(10)]
+        [Required, StringLength(40)]
         public string VersionNumber { get; set; }
 
         [Required, StringLength(300)]
