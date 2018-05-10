@@ -1,4 +1,5 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+﻿@using NAiME.Models
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         @Html.ActionLink("NAiME", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
 
@@ -17,6 +18,12 @@
                 <li class="nav-item">
                     @Html.ActionLink("Contact", "Contact", "Home", new {area = ""}, new {@class = "nav-link"})
                 </li>
+                @if (User.IsInRole(RoleName.Admin))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Users", "Index", "Members", new {area = ""}, new {@class = "nav-link"})
+                    </li>
+                }
                 <li class="nav-item">
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                         @Html.ActionLink("Characters", "Index", "Characters", new { area = "" }, new {type="button", @class = "btn btn-primary" })

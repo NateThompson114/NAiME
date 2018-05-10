@@ -1,0 +1,25 @@
+﻿@model IEnumerable<NAiME.ViewModel.UsersInRoleViewModel>
+@{
+}
+
+<h3>Users</h3>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Users</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td>@user.Role</td>
+        </tr>
+    }
+    </tbody>
+</table>

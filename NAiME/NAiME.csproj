@@ -204,6 +204,7 @@
     <Compile Include="Controllers\CharactersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,6 +243,7 @@
     <Compile Include="Models\Character\CharacterMainStats.cs" />
     <Compile Include="Models\Character\CharacterSavingThrows.cs" />
     <Compile Include="Models\Character\CharacterSkills.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\UserNameUniqueCheck.cs" />
     <Compile Include="Tools\Sha.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -258,6 +260,7 @@
     <Compile Include="ViewModel\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModel\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModel\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModel\UsersInRoleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -618,6 +621,7 @@
     <Content Include="Views\Characters\Partials\Save\_saveStats.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveThrows.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveSkills.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
