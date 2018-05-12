@@ -1,7 +1,7 @@
 ﻿@using NAiME.Models.Character
 @model NAiME.Models.Character.Character
 
-<div class="border">
+@*<div class="border">
     <div style="color: red" class="text-center">Skills</div>
     <hr/>
     <div style="width: 100%; margin: 0 auto" class="table">
@@ -12,36 +12,8 @@
             <div  class="col-3 text-center"><p style="border-bottom: 1px solid black" id="acroDex">0</p></div>
             <div class="col-6">Acrobatics (Dex)</div>
         </div>
-        <div class="row">
-            <div class="col-3">
-                @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control", id = "acroCb" })
-            </div>
-            <div style="border-bottom: 1px solid black" class="col-3"><p id="acroDex">0</p></div>
-            <div class="col-6">Acrobatics</div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control", id = "acroCb" })
-            </div>
-            <div style="border-bottom: 1px solid black" class="col-3"><p id="acroDex">0</p></div>
-            <div class="col-6">Acrobatics</div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control", id = "acroCb" })
-            </div>
-            <div style="border-bottom: 1px solid black" class="col-3"><p id="acroDex">0</p></div>
-            <div class="col-6">Acrobatics</div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control", id = "acroCb" })
-            </div>
-            <div style="border-bottom: 1px solid black" class="col-3"><p id="acroDex">0</p></div>
-            <div class="col-6">Acrobatics</div>
-        </div>
     </div>
-</div>
+</div>*@
 
 <h3>Skills</h3>
 <table class="table table-bordered table-hover">
@@ -55,13 +27,13 @@
     <tbody>
 
     <!--Acrobatics-->
-    <!--<tr>
+    <tr>
         <td>
             @Html.CheckBoxFor(m => m.CharacterSkills.AcrobaticsDex, new { @class = "form-control", id="acroCb" })
         </td>
         <td><p id="acroDex">0</p></td>
         <td>Acrobatics</td>
-    </tr>--!>
+    </tr>
 
     <!--Animal Handling-->
     <tr>

@@ -14,7 +14,7 @@
 
 @{
     var userToken = Model.UserToken;
-    var tableHeaders = new List<string> { "Name", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma", "Shadow", "Character Token" };
+    var tableHeaders = new List<string> { "Name", "Level", "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma", "Shadow"};
     <table id="characterDataTable" class="table table-hover">
         <thead>
         <tr>
@@ -42,6 +42,12 @@
                         }
                     },
                     {
+                        render: function (data, type, character) {
+                            var cLevel = character.characterLevel.level;
+                            return  cLevel > 0 ? cLevel : 0;
+                        }
+                    },
+                    {
                         data: "characterMainStats.strength"
                     },
                     {
@@ -61,9 +67,6 @@
                     },
                     {
                         data: "characterMainStats.shadow"
-                    },
-                    {
-                        data: "characterToken"
                     }
                 ]
             });
