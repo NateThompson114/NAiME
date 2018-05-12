@@ -9,5 +9,6 @@ namespace NAiME.Models.Character
     {
         public int Level { get; set; }
         public int ExperiencePoints { get; set; }
+        public int ProficiencyBonus { get; set; }
     }
 }

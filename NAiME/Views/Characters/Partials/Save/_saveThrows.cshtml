@@ -7,7 +7,6 @@
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
-        <th>Proficient</th>
         <th>Skill</th>
         <th>Value</th>
         <th>Multiplier</th>
@@ -17,92 +16,71 @@
 
     <!--Strength Row-->
     <tr style="vertical-align: middle">
-        <td >
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowStrength, new { @class = "form-control", id = "strProCb" })
-        </td>
         <td>Strength</td>
         <td><p id="strSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowStrengthMultiplier,
-                new {type = "number", min = 1, max = 4, @class = "form-control", id = "strMult"})
+                new {type = "number", @class = "form-control", id = "strMult"})
         </td>
     </tr>
     
     <!--Dexterity Row-->
     <tr>
-        <td>
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterity, new { @class = "form-control", id = "dexProCb" })
-        </td>
         <td>Dexterity</td>
         <td><p id="dexSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowDexterityMultiplier,
-                new { type = "number", min = 1, max = 4, @class = "form-control", id = "dexMult" })
+                new { type = "number", @class = "form-control", id = "dexMult" })
         </td>
     </tr>
     
     <!--Constitution Row-->
     <tr>
-        <td>
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitution, new { @class = "form-control", id = "conProCb" })
-        </td>
         <td>Constitution</td>
         <td><p id="conSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowConstitutionMultiplier,
-                new { type = "number", min = 1, max = 4, @class = "form-control", id = "conMult" })
+                new { type = "number", @class = "form-control", id = "conMult" })
         </td>
     </tr>
     
     <!--Intelligence Row-->
     <tr>
-        <td>
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligence, new { @class = "form-control", id = "intProCb" })
-        </td>
         <td>Intelligence</td>
         <td><p id="intSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowIntelligenceMultiplier,
-             new { type = "number", min = 1, max = 4, @class = "form-control", id = "intMult" })
+             new { type = "number", @class = "form-control", id = "intMult" })
         </td>
     </tr>
 
     <!--Wisdom Row-->
     <tr>
-        <td>
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdom, new { @class = "form-control", id = "wisProCb" })
-        </td>
         <td>Wisdom</td>
         <td><p id="wisSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowWisdomMultiplier,
-             new { type = "number", min = 1, max = 4, @class = "form-control", id = "wisMult" })
+             new { type = "number", @class = "form-control", id = "wisMult" })
         </td>
     </tr>
     
     <!--Charisma Row-->
     <tr>
-        <td>
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCharisma, new { @class = "form-control", id = "chaProCb" })
-        </td>
         <td>Charisma</td>
         <td><p id="chaSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCharismaMultiplier,
-             new { type = "number", min = 1, max = 4, @class = "form-control", id = "chaMult" })
+             new { type = "number", @class = "form-control", id = "chaMult" })
         </td>
     </tr>
 
     <!--Corruption Row-->
     <tr>
-        <td>
-            @Html.CheckBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruption, new { @class = "form-control", id = "corProCb" })
-        </td>
         <td>Corruption</td>
         <td><p id="corSt">0</p></td>
         <td>
             @Html.TextBoxFor(m => m.CharacterSavingThrows.SavingThrowCorruptionMultiplier,
-             new { type = "number", min = 1, max = 4, @class = "form-control", id = "corMult" })
+             new { type = "number", @class = "form-control", id = "corMult" })
         </td>
     </tr>
 

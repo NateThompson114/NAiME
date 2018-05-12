@@ -46,16 +46,7 @@ namespace NAiME.Controllers
                     Wisdom = 8
                 },
                 CharacterSkills = new CharacterSkills(),
-                CharacterSavingThrows = new CharacterSavingThrows
-                {
-                    SavingThrowStrengthMultiplier = 1,
-                    SavingThrowCharismaMultiplier = 1,
-                    SavingThrowConstitutionMultiplier = 1,
-                    SavingThrowCorruptionMultiplier = 1,
-                    SavingThrowDexterityMultiplier = 1,
-                    SavingThrowIntelligenceMultiplier = 1,
-                    SavingThrowWisdomMultiplier = 1
-                },
+                CharacterSavingThrows = new CharacterSavingThrows(),
                 CharacterLevel = new CharacterLevel()
             };
             return View("Save", viewModel);

@@ -236,6 +236,14 @@
     <Compile Include="Migrations\201805090326358_expandedVersionNumberOnChangeLog.Designer.cs">
       <DependentUpon>201805090326358_expandedVersionNumberOnChangeLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805120009451_removedRedundantSavingThrow.cs" />
+    <Compile Include="Migrations\201805120009451_removedRedundantSavingThrow.Designer.cs">
+      <DependentUpon>201805120009451_removedRedundantSavingThrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120025464_addedProficiencyToCharacterLevel.cs" />
+    <Compile Include="Migrations\201805120025464_addedProficiencyToCharacterLevel.Designer.cs">
+      <DependentUpon>201805120025464_addedProficiencyToCharacterLevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\Character.cs" />
@@ -658,6 +666,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805090326358_expandedVersionNumberOnChangeLog.resx">
       <DependentUpon>201805090326358_expandedVersionNumberOnChangeLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120009451_removedRedundantSavingThrow.resx">
+      <DependentUpon>201805120009451_removedRedundantSavingThrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120025464_addedProficiencyToCharacterLevel.resx">
+      <DependentUpon>201805120025464_addedProficiencyToCharacterLevel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

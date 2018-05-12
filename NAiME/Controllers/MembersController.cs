@@ -50,24 +50,24 @@ namespace NAiME.Controllers
 
         public ActionResult New()
         {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_context));
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_context));
+            //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
 
-            const string roleName = "Admin";
+            //const string roleName = "Admin";
 
-            if (!roleManager.RoleExists(roleName))
-            {
-                var role = new IdentityRole {Name = roleName};
-                roleManager.Create(role);
-            }
+            //if (!roleManager.RoleExists(roleName))
+            //{
+            //    var role = new IdentityRole {Name = roleName};
+            //    roleManager.Create(role);
+            //}
 
-            userManager.AddToRole(User.Identity.GetUserId(), roleName);
+            //userManager.AddToRole(User.Identity.GetUserId(), roleName);
 
 
-            if (User.IsInRole(roleName))
-            {
-                return Content($"{User.Identity.Name} is in the role of {roleName}");
-            }
+            //if (User.IsInRole(roleName))
+            //{
+            //    return Content($"{User.Identity.Name} is in the role of {roleName}");
+            //}
 
             return Content("Failed");
         }

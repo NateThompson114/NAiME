@@ -8,7 +8,6 @@
 
 @using (Html.BeginForm("Save", "Characters"))
 {
-    <p>*Required Fields</p>
     @Html.ValidationSummary(true, "Please fix the following errors.", new { @class = "validation-summary-errors" })
 
     @Html.HiddenFor(m => m.Id)
@@ -17,25 +16,52 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterLevel.Level)*
-                    @Html.TextBoxFor(m => m.CharacterLevel.Level, new { type = "number", min = "0", max = "20", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
-                </div>
+                <table class="table table-borderless">
+                    <tr><td>Picture</td></tr>
+                    <tr class="border">
+                        <td>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name)
+                                @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+                                @Html.ValidationMessageFor(m => m.Name)
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Name)*
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Name)
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)*
-                    @Html.TextBoxFor(m => m.CharacterLevel.ExperiencePoints, new { type = "number", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterLevel.ExperiencePoints)
-                </div>
+            <div class="col-md-8">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-8 form-group">
+                                    <label>Class</label>
+                                    <input name="Class" readonly value="Test" class="form-control" />
+                                </div>
+
+                                <div class="col-md-4 form-group">
+                                    @Html.LabelFor(m => m.CharacterLevel.Level)
+                                    @Html.TextBoxFor(m => m.CharacterLevel.Level, new { type = "number", min = "0", max = "20", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>Background</td>
+                        <td>Player Name</td>
+                    </tr>
+                    <tr>
+                        <td>Culture</td>
+                        <td>Shadow Weakness</td>
+                        <td>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)
+                                @Html.TextBoxFor(m => m.CharacterLevel.ExperiencePoints, new {type = "number", @class = "form-control"})
+                                @Html.ValidationMessageFor(m => m.CharacterLevel.ExperiencePoints)
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="row">
@@ -43,6 +69,12 @@
                 @Html.Partial("Partials/Save/_saveStats")
             </div>
             <div class="col-md-4">
+                <div class="form-control">
+                    @Html.LabelFor(m => m.CharacterLevel.ProficiencyBonus)
+                    @Html.TextBoxFor(m => m.CharacterLevel.ProficiencyBonus, new {type = "number", @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.CharacterLevel.ProficiencyBonus)
+                </div>
+                
                 @if (Model.Id > 0)
                 {
                     <div class="form-control">
@@ -51,11 +83,11 @@
                         @Html.ValidationMessageFor(m => m.Inspiration)
                     </div>
                 }
-                
+
                 <hr/>
 
                 @Html.Partial("Partials/Save/_saveThrows")
-                
+
                 <hr/>
 
                 @Html.Partial("Partials/Save/_saveSkills")
@@ -87,9 +119,10 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            var cards = $(".cardStatTarget");
             
             setInterval(function () {
+                var proficiency = 2;
+
                 $("#strCardEnd").text(
                     Math.floor(($("#strCardStart").val() - 10) / 2)
                 );
@@ -108,24 +141,75 @@
                 $("#chaCardEnd").text(
                     Math.floor(($("#chaCardStart").val() - 10) / 2)
                 );
-                $("#strSt").text(parseInt($("#strCardEnd").text()) +
-                    (($("#strProCb").prop("checked") === true ? 2 : 0) * $("#strMult").val())
+
+                $("#strSt").text(parseInt($("#strCardEnd").text()) + (proficiency * $("#strMult").val()));
+                $("#dexSt").text(parseInt($("#dexCardEnd").text()) + (proficiency * $("#dexMult").val()));
+                $("#conSt").text(parseInt($("#conCardEnd").text()) + (proficiency * $("#conMult").val()));
+                $("#intSt").text(parseInt($("#intCardEnd").text()) + (proficiency * $("#intMult").val()));
+                $("#wisSt").text(parseInt($("#wisCardEnd").text()) + (proficiency * $("#wisMult").val()));
+                $("#chaSt").text(parseInt($("#chaCardEnd").text()) + (proficiency * $("#chaMult").val()));
+
+                $("#acroDex").text(parseInt($("#dexCardEnd").text()) +
+                    ($("#acroCb").prop("checked") === true ? proficiency : 0)
                 );
-                $("#dexSt").text(parseInt($("#dexCardEnd").text()) +
-                    (($("#dexProCb").prop("checked") === true ? 2 : 0) * $("#dexMult").val())
+                $("#animWis").text(parseInt($("#wisCardEnd").text()) +
+                    ($("#animCb").prop("checked") === true ? proficiency : 0)
                 );
-                $("#conSt").text(parseInt($("#conCardEnd").text()) +
-                    (($("#conProCb").prop("checked") === true ? 2 : 0) * $("#conMult").val())
+                $("#athlStr").text(parseInt($("#strCardEnd").text()) +
+                    ($("#athlCb").prop("checked") === true ? proficiency : 0)
                 );
-                $("#intSt").text(parseInt($("#intCardEnd").text()) +
-                    (($("#intProCb").prop("checked") === true ? 2 : 0) * $("#intMult").val())
+                $("#deceCha").text(parseInt($("#chaCardEnd").text()) +
+                    ($("#deceCb").prop("checked") === true ? proficiency : 0)
                 );
-                $("#wisSt").text(parseInt($("#wisCardEnd").text()) +
-                    (($("#wisProCb").prop("checked") === true ? 2 : 0) * $("#wisMult").val())
+                $("#histInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#histCb").prop("checked") === true ? proficiency : 0)
                 );
-                $("#chaSt").text(parseInt($("#chaCardEnd").text()) +
-                    (($("#chaProCb").prop("checked") === true ? 2 : 0) * $("#chaMult").val())
+                $("#insiWis").text(parseInt($("#wisCardEnd").text()) +
+                    ($("#insiCb").prop("checked") === true ? proficiency : 0)
                 );
+                $("#intiCha").text(parseInt($("#chaCardEnd").text()) +
+                    ($("#intiCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#inveInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#inveCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#loreInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#loreCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#mediWis").text(parseInt($("#wisCardEnd").text()) +
+                    ($("#mediCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#natuInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#natuCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#percWis").text(parseInt($("#wisCardEnd").text()) +
+                    ($("#percCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#perfCha").text(parseInt($("#chaCardEnd").text()) +
+                    ($("#perfCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#persCha").text(parseInt($("#chaCardEnd").text()) +
+                    ($("#persCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#riddInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#riddCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#shadInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#shadCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#sleiDex").text(parseInt($("#dexCardEnd").text()) +
+                    ($("#sleiCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#steaDex").text(parseInt($("#dexCardEnd").text()) +
+                    ($("#steaCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#survWis").text(parseInt($("#wisCardEnd").text()) +
+                    ($("#survCb").prop("checked") === true ? proficiency : 0)
+                );
+                $("#tradInt").text(parseInt($("#intCardEnd").text()) +
+                    ($("#tradCb").prop("checked") === true ? proficiency : 0)
+                );
+
             }, 200);
         });
     </script>
