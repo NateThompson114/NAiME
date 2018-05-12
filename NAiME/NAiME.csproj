@@ -244,6 +244,10 @@
     <Compile Include="Migrations\201805120025464_addedProficiencyToCharacterLevel.Designer.cs">
       <DependentUpon>201805120025464_addedProficiencyToCharacterLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805122018411_addedCharacterTraits.cs" />
+    <Compile Include="Migrations\201805122018411_addedCharacterTraits.Designer.cs">
+      <DependentUpon>201805122018411_addedCharacterTraits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\Character.cs" />
@@ -251,6 +255,7 @@
     <Compile Include="Models\Character\CharacterMainStats.cs" />
     <Compile Include="Models\Character\CharacterSavingThrows.cs" />
     <Compile Include="Models\Character\CharacterSkills.cs" />
+    <Compile Include="Models\Character\CharacterTraits.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\UserNameUniqueCheck.cs" />
     <Compile Include="Tools\Sha.cs" />
@@ -630,6 +635,9 @@
     <Content Include="Views\Characters\Partials\Save\_saveThrows.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveSkills.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveTraits.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveACHP.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveBasic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -672,6 +680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805120025464_addedProficiencyToCharacterLevel.resx">
       <DependentUpon>201805120025464_addedProficiencyToCharacterLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805122018411_addedCharacterTraits.resx">
+      <DependentUpon>201805122018411_addedCharacterTraits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -47,7 +47,8 @@ namespace NAiME.Controllers
                 },
                 CharacterSkills = new CharacterSkills(),
                 CharacterSavingThrows = new CharacterSavingThrows(),
-                CharacterLevel = new CharacterLevel()
+                CharacterLevel = new CharacterLevel(),
+                CharacterTraits = new CharacterTraits()
             };
             return View("Save", viewModel);
         }

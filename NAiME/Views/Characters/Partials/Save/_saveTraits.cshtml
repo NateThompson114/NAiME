@@ -1,0 +1,37 @@
+﻿@using NAiME.Models.Character
+@model NAiME.Models.Character.Character
+
+<table class="table table-borderless">
+    <tr>
+        <td class="form-group">
+            <!--Traits: Distinctive Qualities-->
+            @Html.LabelFor(m => m.CharacterTraits.DistinctiveQuality)
+            @Html.TextAreaFor(m => m.CharacterTraits.DistinctiveQuality, new {rows = 4, style= "min-width: 100%", @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.CharacterTraits.DistinctiveQuality)
+        </td>
+    </tr>
+    <tr>
+        <td class="form-group">
+            <!--Traits: Distinctive Qualities-->
+            @Html.LabelFor(m => m.CharacterTraits.Speciality)
+            @Html.TextAreaFor(m => m.CharacterTraits.Speciality, new {rows = 4, style = "min-width: 100%", @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.CharacterTraits.Speciality)
+        </td>
+    </tr>
+    <tr>
+        <td class="form-group">
+            <!--Traits: Distinctive Qualities-->
+            @Html.LabelFor(m => m.CharacterTraits.Hope)
+            @Html.TextAreaFor(m => m.CharacterTraits.Hope, new {rows = 4, style = "min-width: 100%", @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.CharacterTraits.Hope)
+        </td>
+    </tr>
+    <tr>
+        <td class="form-group">
+            <!--Traits: Distinctive Qualities-->
+            @Html.LabelFor(m => m.CharacterTraits.Despair)
+            @Html.TextAreaFor(m => m.CharacterTraits.Despair, new {rows = 4, style = "min-width: 100%", @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.CharacterTraits.Despair)
+        </td>
+    </tr>
+</table>

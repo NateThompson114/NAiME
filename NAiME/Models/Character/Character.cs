@@ -35,5 +35,8 @@ namespace NAiME.Models.Character
 
         //Level
         public CharacterLevel CharacterLevel { get; set; }
+
+        //Traits
+        public CharacterTraits CharacterTraits { get; set; }
     }
 }

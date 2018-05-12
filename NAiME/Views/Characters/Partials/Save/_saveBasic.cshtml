@@ -1,0 +1,35 @@
+﻿@using NAiME.Models.Character
+@model NAiME.Models.Character.Character
+
+<table class="table table-borderless">
+    <tr>
+        <td>
+            <div class="row">
+                <div class="col-md-8 form-group">
+                    <label>Class</label>
+                    <input name="Class" readonly value="Test" class="form-control" />
+                </div>
+
+                <div class="col-md-4 form-group">
+                    @Html.LabelFor(m => m.CharacterLevel.Level)
+                    @Html.TextBoxFor(m => m.CharacterLevel.Level, new { type = "number", min = "0", max = "20", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
+                </div>
+            </div>
+
+        </td>
+        <td>Background</td>
+        <td>Player Name</td>
+    </tr>
+    <tr>
+        <td>Culture</td>
+        <td>Shadow Weakness</td>
+        <td>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)
+                @Html.TextBoxFor(m => m.CharacterLevel.ExperiencePoints, new { type = "number", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterLevel.ExperiencePoints)
+            </div>
+        </td>
+    </tr>
+</table>

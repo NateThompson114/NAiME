@@ -30,71 +30,45 @@
                 </table>
             </div>
             <div class="col-md-8">
-                <table class="table table-borderless">
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-8 form-group">
-                                    <label>Class</label>
-                                    <input name="Class" readonly value="Test" class="form-control" />
-                                </div>
-
-                                <div class="col-md-4 form-group">
-                                    @Html.LabelFor(m => m.CharacterLevel.Level)
-                                    @Html.TextBoxFor(m => m.CharacterLevel.Level, new { type = "number", min = "0", max = "20", @class = "form-control" })
-                                    @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
-                                </div>
-                            </div>
-
-                        </td>
-                        <td>Background</td>
-                        <td>Player Name</td>
-                    </tr>
-                    <tr>
-                        <td>Culture</td>
-                        <td>Shadow Weakness</td>
-                        <td>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)
-                                @Html.TextBoxFor(m => m.CharacterLevel.ExperiencePoints, new {type = "number", @class = "form-control"})
-                                @Html.ValidationMessageFor(m => m.CharacterLevel.ExperiencePoints)
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                @Html.Partial("Partials/Save/_saveBasic")
             </div>
         </div>
         <div class="row">
             <div class="col-md-2 text-center">
                 @Html.Partial("Partials/Save/_saveStats")
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-control">
                     @Html.LabelFor(m => m.CharacterLevel.ProficiencyBonus)
-                    @Html.TextBoxFor(m => m.CharacterLevel.ProficiencyBonus, new { id="proficiencyBonus", type = "number", @class = "form-control"})
+                    @Html.TextBoxFor(m => m.CharacterLevel.ProficiencyBonus, new { id = "proficiencyBonus", type = "number", @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.CharacterLevel.ProficiencyBonus)
                 </div>
-                
+
                 @if (Model.Id > 0)
                 {
                     <div class="form-control">
-                        @Html.CheckBoxFor(m => m.Inspiration, new {@class = ""})
+                        @Html.CheckBoxFor(m => m.Inspiration, new { @class = "" })
                         @Html.LabelFor(m => m.Inspiration)
                         @Html.ValidationMessageFor(m => m.Inspiration)
                     </div>
                 }
 
-                <hr/>
+                <hr />
 
                 @Html.Partial("Partials/Save/_saveThrows")
 
-                <hr/>
+                <hr />
 
                 @Html.Partial("Partials/Save/_saveSkills")
 
             </div>
-            <div class="col-md-6">
-                <h3>Armor / Hit Points /Etc</h3>
+            <div class="col-md-3">
+                @Html.Partial("Partials/Save/_saveACHP")
+            </div>
+            <div class="col-md-4">
+                <div class="border">
+                    @Html.Partial("Partials/Save/_saveTraits")
+                </div>
             </div>
         </div>
     </div>
