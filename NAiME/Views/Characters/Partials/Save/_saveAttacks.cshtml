@@ -1,0 +1,36 @@
+﻿@using NAiME.Models.Character
+@model NAiME.Models.Character.Character
+
+<h3 class="text-center">Attacks</h3>
+<table class="table table-borderless">
+    
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Atk Bonus</th>
+        <th>Damage/Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon1.Name, new { @class = "form-control" })</td>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon1.AttackBonus, new { @class = "form-control" })</td>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon1.DamageType, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon2.Name, new { @class = "form-control" })</td>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon2.AttackBonus, new { @class = "form-control" })</td>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon2.DamageType, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon3.Name, new { @class = "form-control" })</td>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon3.AttackBonus, new { @class = "form-control" })</td>
+        <td>@Html.TextBoxFor(m => m.CharacterWeapon3.DamageType, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            @Html.TextAreaFor(m => m.Attacks, new { rows = 6, @class = "form-control" })
+        </td>
+    </tr>
+    </tbody>
+</table>

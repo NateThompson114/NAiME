@@ -64,25 +64,29 @@
             </div>
             <div class="col-md-3">
                 @Html.Partial("Partials/Save/_saveACHP")
+                @Html.Partial("Partials/Save/_saveAttacks")
+                @Html.Partial("Partials/Save/_saveEquipment")
+                
+                @Html.LabelFor(m => m.StandardOfLiving)
+                @Html.TextBoxFor(m => m.StandardOfLiving, new {@class = "form-control"})
+                @Html.ValidationMessageFor(m => m.StandardOfLiving)
             </div>
             <div class="col-md-4">
                 <div class="border">
                     @Html.Partial("Partials/Save/_saveTraits")
                 </div>
+                <hr/>
+                <div>
+                    @Html.LabelFor(m => m.FeaturesTraitsVirtues)
+                    @Html.TextAreaFor(m => m.FeaturesTraitsVirtues, new {rows = 36, style= "min-width: 100%", @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.FeaturesTraitsVirtues)
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+        </div>
     </div>
-    <table>
-        <tr>
-            <td class="col-sm-2"></td>
-            <td class="col-sm-4" style="vertical-align: top;"></td>
-            <td class="col-sm-6">&nbsp;</td>
-        </tr>
-    </table>
-
-
-
-
 
     @Html.AntiForgeryToken()
 
@@ -115,6 +119,8 @@
                 $("#chaCardEnd").text(
                     Math.floor(($("#chaCardStart").val() - 10) / 2)
                 );
+
+                $("#initiative").text($("#dexCardEnd").text());
 
                 $("#strSt").text(parseInt($("#strCardEnd").text()) + (proficiency * $("#strMult").val()));
                 $("#dexSt").text(parseInt($("#dexCardEnd").text()) + (proficiency * $("#dexMult").val()));

@@ -71,19 +71,52 @@ namespace NAiME.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new Character
-                {
-                    CharacterLevel = character.CharacterLevel,
-                    CharacterMainStats = character.CharacterMainStats,
-                    CharacterSavingThrows = character.CharacterSavingThrows,
-                    CharacterSkills = character.CharacterSkills,
-                    CharacterToken = character.CharacterToken,
-                    ExperiencePoints = character.ExperiencePoints,
-                    GroupToken = character.GroupToken,
-                    Id = character.Id,
-                    Inspiration = character.Inspiration,
-                    Name = character.Name
-                };
+                //var viewModel = new Character
+                //{
+                //    Id = character.Id,
+                //    Name = character.Name,
+                //    CharacterToken = character.CharacterToken,
+                //    //PlayerToken
+                //    GroupToken = character.GroupToken,
+                //    Inspiration = character.Inspiration,
+                //    ArmourClass = character.ArmourClass,
+                //    Speed = character.Speed,
+                //    HitPointsCurrent = character.HitPointsCurrent,
+                //    HitPointsMaximum = character.HitPointsMaximum,
+                //    HitPointsTemporary = character.HitPointsTemporary,
+                //    Miserable = character.Miserable,
+
+                //    CharacterMainStats = character.CharacterMainStats,
+                //    CharacterSavingThrows = character.CharacterSavingThrows,
+                //    CharacterSkills = character.CharacterSkills,
+                //    CharacterLevel = character.CharacterLevel,
+                //    CharacterTraits = character.CharacterTraits,
+
+                //    CharacterWeapon1 = character.CharacterWeapon1,
+                //    CharacterWeapon2 = character.CharacterWeapon2,
+                //    CharacterWeapon3 = character.CharacterWeapon3,
+                //    Attacks = character.Attacks,
+
+                //    FeaturesTraitsVirtues = character.FeaturesTraitsVirtues,
+
+                //    Gold = character.Gold,
+                //    Silver = character.Silver,
+                //    Copper = character.Copper,
+
+                //    Equipment = character.Equipment,
+                //    OtherProficienciesAndLangages = character.OtherProficienciesAndLangages,
+                //    StandardOfLiving = character.StandardOfLiving,
+                //    CharacterBasics = character.CharacterBasics,
+                //    CharacterAppearance = character.CharacterAppearance,
+                //    AlliesAndPatrons = character.AlliesAndPatrons,
+                //    CharacterBackstory = character.CharacterBackstory,
+                //    AdditionalFeaturesAndTraits = character.AdditionalFeaturesAndTraits,
+                //    Treasure = character.Treasure
+                //};
+                
+                var viewModel = new Character();
+                viewModel = character;
+
                 return View("Save", viewModel);
             }
 
@@ -94,7 +127,6 @@ namespace NAiME.Controllers
                 var user = _context.Users.Single(u => u.Id == currentUser);
 
                 character.PlayerToken = user.UserToken;
-                character.Inspiration = false;
 
                 var characterInDb = _context.Characters.Add(character);
                 _context.SaveChanges();
@@ -105,13 +137,54 @@ namespace NAiME.Controllers
             {
                 var characterInDb = _context.Characters.Single(c => c.Id == character.Id);
 
+                //id
                 characterInDb.Name = character.Name;
-                characterInDb.ExperiencePoints = character.ExperiencePoints;
+                //CharacterToken
+                //PlayerToken
+                //GroupToken
                 characterInDb.Inspiration = character.Inspiration;
+                characterInDb.ArmourClass = character.ArmourClass;
+                characterInDb.Speed = character.Speed;
+                characterInDb.HitPointsCurrent = character.HitPointsCurrent;
+                characterInDb.HitPointsMaximum = character.HitPointsMaximum;
+                characterInDb.HitPointsTemporary = character.HitPointsTemporary;
+                characterInDb.Miserable = character.Miserable;
+
                 characterInDb.CharacterMainStats = character.CharacterMainStats;
                 characterInDb.CharacterSavingThrows = character.CharacterSavingThrows;
                 characterInDb.CharacterSkills = character.CharacterSkills;
                 characterInDb.CharacterLevel = character.CharacterLevel;
+                characterInDb.CharacterTraits = character.CharacterTraits;
+
+                characterInDb.CharacterWeapon1 = character.CharacterWeapon1 ?? new CharacterWeapon();
+                characterInDb.CharacterWeapon2 = character.CharacterWeapon2 ?? new CharacterWeapon();
+                characterInDb.CharacterWeapon3 = character.CharacterWeapon3 ?? new CharacterWeapon();
+                characterInDb.Attacks = character.Attacks;
+
+                characterInDb.FeaturesTraitsVirtues = character.FeaturesTraitsVirtues;
+
+                characterInDb.Gold = character.Gold;
+                characterInDb.Silver = character.Silver;
+                characterInDb.Copper = character.Copper;
+
+                characterInDb.Equipment = character.Equipment;
+
+                characterInDb.OtherProficienciesAndLangages = character.OtherProficienciesAndLangages;
+
+                characterInDb.StandardOfLiving = character.StandardOfLiving;
+
+                characterInDb.CharacterBasics = character.CharacterBasics ?? new CharacterBasics();
+
+                characterInDb.CharacterAppearance = character.CharacterAppearance;
+
+                characterInDb.AlliesAndPatrons = character.AlliesAndPatrons;
+
+                characterInDb.CharacterBackstory = character.CharacterBackstory;
+
+                characterInDb.AdditionalFeaturesAndTraits = character.AdditionalFeaturesAndTraits;
+
+                characterInDb.Treasure = character.Treasure;
+
             }
 
             _context.SaveChanges();

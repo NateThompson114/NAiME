@@ -248,8 +248,18 @@
     <Compile Include="Migrations\201805122018411_addedCharacterTraits.Designer.cs">
       <DependentUpon>201805122018411_addedCharacterTraits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805122147448_addingAttacksAndFeatures.cs" />
+    <Compile Include="Migrations\201805122147448_addingAttacksAndFeatures.Designer.cs">
+      <DependentUpon>201805122147448_addingAttacksAndFeatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131346367_addedAllRemainingItemsForCharacterSheet.cs" />
+    <Compile Include="Migrations\201805131346367_addedAllRemainingItemsForCharacterSheet.Designer.cs">
+      <DependentUpon>201805131346367_addedAllRemainingItemsForCharacterSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
+    <Compile Include="Models\Character\CharacterBasics.cs" />
+    <Compile Include="Models\Character\CharacterWeapon.cs" />
     <Compile Include="Models\Character\Character.cs" />
     <Compile Include="Models\Character\CharacterLevel.cs" />
     <Compile Include="Models\Character\CharacterMainStats.cs" />
@@ -638,6 +648,8 @@
     <Content Include="Views\Characters\Partials\Save\_saveTraits.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveACHP.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveBasic.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveAttacks.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveEquipment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -683,6 +695,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805122018411_addedCharacterTraits.resx">
       <DependentUpon>201805122018411_addedCharacterTraits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805122147448_addingAttacksAndFeatures.resx">
+      <DependentUpon>201805122147448_addingAttacksAndFeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131346367_addedAllRemainingItemsForCharacterSheet.resx">
+      <DependentUpon>201805131346367_addedAllRemainingItemsForCharacterSheet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

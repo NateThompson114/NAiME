@@ -3,20 +3,45 @@
 
 <table class="table table-bordered text-center">
     <tr>
-        <td style="width: 33.333%">Armor Class</td>
-        <td style="width: 33.333%">Initiative</td>
-        <td style="width: 33.333%">Speed</td>
+        <td style="width: 33.333%">
+            @Html.LabelFor(m => m.ArmourClass)
+            @Html.TextBoxFor(m => m.ArmourClass, new {@class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ArmourClass)
+        </td>
+        <td style="width: 33.333%">
+            <p >Initiative</p>
+            <p id="initiative">0</p>
+        </td>
+        <td style="width: 33.333%">
+            @Html.LabelFor(m => m.Speed)
+            @Html.TextBoxFor(m => m.Speed, new {@class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Speed)
+        </td>
     </tr>
     <tr>
-        <td class="col-md-12" colspan="3">Current Hit Points</td>
+        <td class="col-md-12" colspan="3">
+            @Html.LabelFor(m => m.HitPointsCurrent)
+            @Html.TextBoxFor(m => m.HitPointsCurrent, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.HitPointsCurrent)
+
+            <hr />
+
+            @Html.LabelFor(m => m.HitPointsMaximum)
+            @Html.TextBoxFor(m => m.HitPointsMaximum, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.HitPointsMaximum)
+        </td>
     </tr>
     <tr>
         <td colspan="3">
             <div style="float: left; width: 50%; border-right: 1px solid black">
-                Temporary Hit Points
+                @Html.LabelFor(m => m.HitPointsTemporary)
+                @Html.TextBoxFor(m => m.HitPointsTemporary, new {@class = "form-control" })
+                @Html.ValidationMessageFor(m => m.HitPointsTemporary)
             </div>
             <div style="float: right; width: 50%">
-                Miserable
+                @Html.LabelFor(m => m.Miserable)
+                @Html.CheckBoxFor(m => m.Miserable, new {@class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Miserable)
             </div>
         </td>
     </tr>

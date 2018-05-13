@@ -1,0 +1,32 @@
+﻿@using NAiME.Models.Character
+@model NAiME.Models.Character.Character
+
+<h3 class="text-center">Equipment</h3>
+<table class="table table-borderless">
+    <thead>
+    <tr>
+        <th>Gold</th>
+        <th>Silver</th>
+        <th>Copper</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            @Html.TextBoxFor(m => m.Gold, new { type = "number", id = "gold", @class = "form-control text-center" })
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Silver, new { type = "number", id = "silver", @class = "form-control text-center" })
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Copper, new { type = "number", id = "copper", @class = "form-control text-center" })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            @Html.TextAreaFor(m => m.Equipment, new { rows = 12, style = "min-width: 100%", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Equipment)
+        </td>
+    </tr>
+    </tbody>
+</table>
