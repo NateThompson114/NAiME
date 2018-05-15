@@ -71,49 +71,6 @@ namespace NAiME.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //var viewModel = new Character
-                //{
-                //    Id = character.Id,
-                //    Name = character.Name,
-                //    CharacterToken = character.CharacterToken,
-                //    //PlayerToken
-                //    GroupToken = character.GroupToken,
-                //    Inspiration = character.Inspiration,
-                //    ArmourClass = character.ArmourClass,
-                //    Speed = character.Speed,
-                //    HitPointsCurrent = character.HitPointsCurrent,
-                //    HitPointsMaximum = character.HitPointsMaximum,
-                //    HitPointsTemporary = character.HitPointsTemporary,
-                //    Miserable = character.Miserable,
-
-                //    CharacterMainStats = character.CharacterMainStats,
-                //    CharacterSavingThrows = character.CharacterSavingThrows,
-                //    CharacterSkills = character.CharacterSkills,
-                //    CharacterLevel = character.CharacterLevel,
-                //    CharacterTraits = character.CharacterTraits,
-
-                //    CharacterWeapon1 = character.CharacterWeapon1,
-                //    CharacterWeapon2 = character.CharacterWeapon2,
-                //    CharacterWeapon3 = character.CharacterWeapon3,
-                //    Attacks = character.Attacks,
-
-                //    FeaturesTraitsVirtues = character.FeaturesTraitsVirtues,
-
-                //    Gold = character.Gold,
-                //    Silver = character.Silver,
-                //    Copper = character.Copper,
-
-                //    Equipment = character.Equipment,
-                //    OtherProficienciesAndLangages = character.OtherProficienciesAndLangages,
-                //    StandardOfLiving = character.StandardOfLiving,
-                //    CharacterBasics = character.CharacterBasics,
-                //    CharacterAppearance = character.CharacterAppearance,
-                //    AlliesAndPatrons = character.AlliesAndPatrons,
-                //    CharacterBackstory = character.CharacterBackstory,
-                //    AdditionalFeaturesAndTraits = character.AdditionalFeaturesAndTraits,
-                //    Treasure = character.Treasure
-                //};
-                
                 var viewModel = new Character();
                 viewModel = character;
 
@@ -145,10 +102,14 @@ namespace NAiME.Controllers
                 characterInDb.Inspiration = character.Inspiration;
                 characterInDb.ArmourClass = character.ArmourClass;
                 characterInDb.Speed = character.Speed;
-                characterInDb.HitPointsCurrent = character.HitPointsCurrent;
-                characterInDb.HitPointsMaximum = character.HitPointsMaximum;
-                characterInDb.HitPointsTemporary = character.HitPointsTemporary;
+                characterInDb.CharacterHitPoints = character.CharacterHitPoints ?? new CharacterHitPoints();
                 characterInDb.Miserable = character.Miserable;
+                characterInDb.Background = character.Background;
+                characterInDb.PlayerName = character.PlayerName;
+                characterInDb.Culture = character.Culture;
+                characterInDb.ShadowWeakness = character.ShadowWeakness;
+                characterInDb.CharacterHitDices = character.CharacterHitDices ?? new CharacterHitDices();
+                characterInDb.CharacterDeathThrows = character.CharacterDeathThrows ?? new CharacterDeathThrows();
 
                 characterInDb.CharacterMainStats = character.CharacterMainStats;
                 characterInDb.CharacterSavingThrows = character.CharacterSavingThrows;

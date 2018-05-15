@@ -12,81 +12,148 @@
 
     @Html.HiddenFor(m => m.Id)
 
-    <!--Character Name-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <table class="table table-borderless">
-                    <tr><td>Picture</td></tr>
-                    <tr class="border">
-                        <td>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Name)
-                                @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
-                                @Html.ValidationMessageFor(m => m.Name)
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+
+                <!--Character Name-->
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name)
+                    <br />
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control-lg" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                    
+                    <hr />
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-8">
                 @Html.Partial("Partials/Save/_saveBasic")
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2 text-center">
-                @Html.Partial("Partials/Save/_saveStats")
-            </div>
-            <div class="col-md-3">
-                <div class="form-control">
-                    @Html.LabelFor(m => m.CharacterLevel.ProficiencyBonus)
-                    @Html.TextBoxFor(m => m.CharacterLevel.ProficiencyBonus, new { id = "proficiencyBonus", type = "number", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CharacterLevel.ProficiencyBonus)
-                </div>
+    </div>
 
-                @if (Model.Id > 0)
-                {
-                    <div class="form-control">
-                        @Html.CheckBoxFor(m => m.Inspiration, new { @class = "" })
-                        @Html.LabelFor(m => m.Inspiration)
-                        @Html.ValidationMessageFor(m => m.Inspiration)
+    
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active show" data-toggle="tab" href="#stats">Stats</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#characterDetails">Details</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active show" id="stats">
+            <br />
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.Partial("Partials/Save/_saveStats")
+                        <p>
+                            Passive Perception
+                            <div id="passivePerception">0</div>
+                        </p>
                     </div>
-                }
+                    <div class="col-md-4">
+                        <div class="form-control">
+                            @Html.LabelFor(m => m.CharacterLevel.ProficiencyBonus)
+                            @Html.TextBoxFor(m => m.CharacterLevel.ProficiencyBonus, new { id = "proficiencyBonus", type = "number", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.CharacterLevel.ProficiencyBonus)
+                        </div>
 
-                <hr />
+                        @if (Model.Id > 0)
+                        {
+                            <div class="form-control">
+                                @Html.CheckBoxFor(m => m.Inspiration, new { @class = "" })
+                                @Html.LabelFor(m => m.Inspiration)
+                                @Html.ValidationMessageFor(m => m.Inspiration)
+                            </div>
+                        }
 
-                @Html.Partial("Partials/Save/_saveThrows")
+                        <hr />
 
-                <hr />
+                        @Html.Partial("Partials/Save/_saveThrows")
 
-                @Html.Partial("Partials/Save/_saveSkills")
+                        <hr />
 
-            </div>
-            <div class="col-md-3">
-                @Html.Partial("Partials/Save/_saveACHP")
-                @Html.Partial("Partials/Save/_saveAttacks")
-                @Html.Partial("Partials/Save/_saveEquipment")
-                
-                @Html.LabelFor(m => m.StandardOfLiving)
-                @Html.TextBoxFor(m => m.StandardOfLiving, new {@class = "form-control"})
-                @Html.ValidationMessageFor(m => m.StandardOfLiving)
-            </div>
-            <div class="col-md-4">
-                <div class="border">
-                    @Html.Partial("Partials/Save/_saveTraits")
-                </div>
-                <hr/>
-                <div>
-                    @Html.LabelFor(m => m.FeaturesTraitsVirtues)
-                    @Html.TextAreaFor(m => m.FeaturesTraitsVirtues, new {rows = 36, style= "min-width: 100%", @class = "form-control"})
-                    @Html.ValidationMessageFor(m => m.FeaturesTraitsVirtues)
+                        @Html.Partial("Partials/Save/_saveSkills")
+                    </div>
+                    <div class="col-md-4">
+                        @Html.Partial("Partials/Save/_saveACHP")
+                        @Html.Partial("Partials/Save/_saveAttacks")
+                        @Html.Partial("Partials/Save/_saveEquipment")
+
+                        @Html.LabelFor(m => m.StandardOfLiving)
+                        @Html.TextBoxFor(m => m.StandardOfLiving, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.StandardOfLiving)
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4"></div>
+        <div class="tab-pane fade" id="characterDetails">
+            <br />
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="border">
+                            @Html.Partial("Partials/Save/_saveTraits")
+                        </div>
+                        <hr />
+                        <div>
+                            @Html.LabelFor(m => m.FeaturesTraitsVirtues)
+                            @Html.TextAreaFor(m => m.FeaturesTraitsVirtues, new { rows = 36, style = "min-width: 100%", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FeaturesTraitsVirtues)
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        @Html.LabelFor(m => m.OtherProficienciesAndLangages)
+                        @Html.TextAreaFor(m => m.OtherProficienciesAndLangages, new { rows = 16, style = "min-width: 100%", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.OtherProficienciesAndLangages)
+
+                        <hr />
+
+                        @Html.LabelFor(m => m.CharacterAppearance)
+                        @Html.TextAreaFor(m => m.CharacterAppearance, new { rows = 16, style = "min-width: 100%", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CharacterAppearance)
+
+                        <hr />
+
+                        @Html.LabelFor(m => m.CharacterBackstory)
+                        @Html.TextAreaFor(m => m.CharacterBackstory, new { rows = 16, style = "min-width: 100%", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CharacterBackstory)
+                    </div>
+                    <div class="col-md-4">
+                        @Html.Partial("Partials/Save/_saveCharacteristics")
+
+                        <hr />
+
+                        @Html.LabelFor(m => m.AlliesAndPatrons)
+                        @Html.TextAreaFor(m => m.AlliesAndPatrons, new { rows = 12, style = "min-width: 100%", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AlliesAndPatrons)
+
+                        <hr />
+
+                        @Html.LabelFor(m => m.AdditionalFeaturesAndTraits)
+                        @Html.TextAreaFor(m => m.AdditionalFeaturesAndTraits, new { rows = 12, style = "min-width: 100%", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AdditionalFeaturesAndTraits)
+
+                        <hr />
+
+                        @Html.LabelFor(m => m.Treasure)
+                        @Html.TextAreaFor(m => m.Treasure, new { rows = 12, style = "min-width: 100%", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Treasure)
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <hr />
 
     @Html.AntiForgeryToken()
 
@@ -97,7 +164,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            
+
             setInterval(function () {
                 var proficiency = parseInt($("#proficiencyBonus").val());
 
@@ -121,6 +188,8 @@
                 );
 
                 $("#initiative").text($("#dexCardEnd").text());
+
+                $("#passivePerception").text(10 + parseInt($("#wisCardEnd").text()));
 
                 $("#strSt").text(parseInt($("#strCardEnd").text()) + (proficiency * $("#strMult").val()));
                 $("#dexSt").text(parseInt($("#dexCardEnd").text()) + (proficiency * $("#dexMult").val()));

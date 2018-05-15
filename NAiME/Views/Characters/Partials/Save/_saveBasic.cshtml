@@ -1,7 +1,7 @@
 ﻿@using NAiME.Models.Character
 @model NAiME.Models.Character.Character
 
-<table class="table table-borderless">
+<table class="table table-bordered">
     <tr>
         <td>
             <div class="row">
@@ -18,12 +18,28 @@
             </div>
 
         </td>
-        <td>Background</td>
-        <td>Player Name</td>
+        <td>
+            @Html.LabelFor(m => m.Background)
+            @Html.TextBoxFor(m => m.Background, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Background)
+        </td>
+        <td>
+            @Html.LabelFor(m => m.PlayerName)
+            @Html.TextBoxFor(m => m.PlayerName, new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.PlayerName)
+        </td>
     </tr>
     <tr>
-        <td>Culture</td>
-        <td>Shadow Weakness</td>
+        <td>
+            @Html.LabelFor(m => m.Culture)
+            @Html.TextBoxFor(m => m.Culture, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Culture)
+        </td>
+        <td>
+            @Html.LabelFor(m => m.ShadowWeakness)
+            @Html.TextBoxFor(m => m.ShadowWeakness, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ShadowWeakness)
+        </td>
         <td>
             <div class="form-group">
                 @Html.LabelFor(m => m.CharacterLevel.ExperiencePoints)

@@ -256,9 +256,16 @@
     <Compile Include="Migrations\201805131346367_addedAllRemainingItemsForCharacterSheet.Designer.cs">
       <DependentUpon>201805131346367_addedAllRemainingItemsForCharacterSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805132105423_AddedDTandHDs.cs" />
+    <Compile Include="Migrations\201805132105423_AddedDTandHDs.Designer.cs">
+      <DependentUpon>201805132105423_AddedDTandHDs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\CharacterBasics.cs" />
+    <Compile Include="Models\Character\CharacterDeathThrows.cs" />
+    <Compile Include="Models\Character\CharacterHitDices.cs" />
+    <Compile Include="Models\Character\CharacterHitPoints.cs" />
     <Compile Include="Models\Character\CharacterWeapon.cs" />
     <Compile Include="Models\Character\Character.cs" />
     <Compile Include="Models\Character\CharacterLevel.cs" />
@@ -650,6 +657,7 @@
     <Content Include="Views\Characters\Partials\Save\_saveBasic.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveAttacks.cshtml" />
     <Content Include="Views\Characters\Partials\Save\_saveEquipment.cshtml" />
+    <Content Include="Views\Characters\Partials\Save\_saveCharacteristics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -701,6 +709,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805131346367_addedAllRemainingItemsForCharacterSheet.resx">
       <DependentUpon>201805131346367_addedAllRemainingItemsForCharacterSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805132105423_AddedDTandHDs.resx">
+      <DependentUpon>201805132105423_AddedDTandHDs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

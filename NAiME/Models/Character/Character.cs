@@ -26,17 +26,25 @@ namespace NAiME.Models.Character
 
         public int Speed { get; set; }
 
-        [Display(Name = "Current Hit Points")]
-        public int HitPointsCurrent { get; set; }
-
-        [Display(Name = "Maximum Hit Points")]
-        public int HitPointsMaximum { get; set; }
-
-        [Display(Name = "Temporary Hit Points")]
-        public int HitPointsTemporary { get; set; }
+        public CharacterHitPoints CharacterHitPoints { get; set; }
 
         public bool Miserable { get; set; }
 
+        [StringLength(20)]
+        public string Background { get; set; }
+
+        [StringLength(60), Display(Name = "Player Name")]
+        public string PlayerName { get; set; }
+
+        [StringLength(20)]
+        public string Culture { get; set; }
+
+        [StringLength(20), Display(Name = "Shadow Weakness")]
+        public string ShadowWeakness { get; set; }
+
+        public CharacterHitDices CharacterHitDices { get; set; }
+
+        public CharacterDeathThrows CharacterDeathThrows { get; set; }
 
         //Main Stats
         public CharacterMainStats CharacterMainStats { get; set; }
