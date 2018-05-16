@@ -1,74 +1,93 @@
 ﻿@using NAiME.Models.Character
 @model NAiME.Models.Character.Character
 
-<table class="table table-bordered text-center">
-    <tr>
-        <td style="width: 33.333%">
-            @Html.LabelFor(m => m.ArmourClass)
-            @Html.TextBoxFor(m => m.ArmourClass, new {@class = "form-control" })
-            @Html.ValidationMessageFor(m => m.ArmourClass)
-        </td>
-        <td style="width: 33.333%">
-            <p >Initiative</p>
-            <p id="initiative">0</p>
-        </td>
-        <td style="width: 33.333%">
-            @Html.LabelFor(m => m.Speed)
-            @Html.TextBoxFor(m => m.Speed, new {@class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Speed)
-        </td>
-    </tr>
-    <tr>
-        <td class="col-md-12" colspan="3">
-            @Html.LabelFor(m => m.CharacterHitPoints.HitPointsCurrent)
-            @Html.TextBoxFor(m => m.CharacterHitPoints.HitPointsCurrent, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterHitPoints.HitPointsCurrent)
-
-            <hr />
-
-            @Html.LabelFor(m => m.CharacterHitPoints.HitPointsMaximum)
-            @Html.TextBoxFor(m => m.CharacterHitPoints.HitPointsMaximum, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterHitPoints.HitPointsMaximum)
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <div style="float: left; width: 50%; border-right: 1px solid black">
+<div class="container border rounded text-center">
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.ArmourClass)
+                @Html.TextBoxFor(m => m.ArmourClass, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.ArmourClass)
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
+                <p>Initiative</p>
+                <h4 class="text-lg-center" id="initiative">0</h4>
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Speed)
+                @Html.TextBoxFor(m => m.Speed, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Speed)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterHitPoints.HitPointsCurrent)
+                @Html.TextBoxFor(m => m.CharacterHitPoints.HitPointsCurrent, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterHitPoints.HitPointsCurrent)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterHitPoints.HitPointsMaximum)
+                @Html.TextBoxFor(m => m.CharacterHitPoints.HitPointsMaximum, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterHitPoints.HitPointsMaximum)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
                 @Html.LabelFor(m => m.CharacterHitPoints.HitPointsTemporary)
-                @Html.TextBoxFor(m => m.CharacterHitPoints.HitPointsTemporary, new {@class = "form-control" })
+                @Html.TextBoxFor(m => m.CharacterHitPoints.HitPointsTemporary, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.CharacterHitPoints.HitPointsTemporary)
             </div>
-            <div style="float: right; width: 50%">
+        </div>
+        <div class="col border">
+            <div class="form-group">
                 @Html.LabelFor(m => m.Miserable)
-                @Html.CheckBoxFor(m => m.Miserable, new {@class = "form-control" })
+                @Html.CheckBoxFor(m => m.Miserable, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.Miserable)
             </div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <div style="float: left; width: 50%; border-right: 1px solid black">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
                 @Html.LabelFor(m => m.CharacterHitDices.HitDice)
                 @Html.TextBoxFor(m => m.CharacterHitDices.HitDice, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.CharacterHitDices.HitDice)
-
-                <br />
-
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
                 @Html.LabelFor(m => m.CharacterHitDices.Total)
-                @Html.TextBoxFor(m => m.CharacterHitDices.Total, new {type="number", min=1, @class = "form-control" })
+                @Html.TextBoxFor(m => m.CharacterHitDices.Total, new { type = "number", min = 1, @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.CharacterHitDices.Total)
             </div>
-            <div style="float: right; width: 50%">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
                 @Html.LabelFor(m => m.CharacterDeathThrows.Succes)
                 @Html.TextBoxFor(m => m.CharacterDeathThrows.Succes, new { type = "number", min = 0, max = 3, @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.CharacterDeathThrows.Succes)
-
-                <br />
-
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
                 @Html.LabelFor(m => m.CharacterDeathThrows.Failure)
                 @Html.TextBoxFor(m => m.CharacterDeathThrows.Failure, new { type = "number", min = 0, max = 3, @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.CharacterDeathThrows.Failure)
             </div>
-        </td>
-    </tr>
-</table>
+        </div>
+    </div>
+</div>

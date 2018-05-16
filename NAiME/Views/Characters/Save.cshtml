@@ -52,14 +52,14 @@
             <br />
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         @Html.Partial("Partials/Save/_saveStats")
-                        <p>
-                            Passive Perception
-                            <div id="passivePerception">0</div>
-                        </p>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-12">Passive Perception</div>
+                            <div class="col-sm-6 col-md-6 col-lg-12" id="passivePerception">0</div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="form-control">
                             @Html.LabelFor(m => m.CharacterLevel.ProficiencyBonus)
                             @Html.TextBoxFor(m => m.CharacterLevel.ProficiencyBonus, new { id = "proficiencyBonus", type = "number", @class = "form-control" })
@@ -83,7 +83,7 @@
 
                         @Html.Partial("Partials/Save/_saveSkills")
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         @Html.Partial("Partials/Save/_saveACHP")
                         @Html.Partial("Partials/Save/_saveAttacks")
                         @Html.Partial("Partials/Save/_saveEquipment")
@@ -99,7 +99,7 @@
             <br />
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="border">
                             @Html.Partial("Partials/Save/_saveTraits")
                         </div>
@@ -110,7 +110,7 @@
                             @Html.ValidationMessageFor(m => m.FeaturesTraitsVirtues)
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         @Html.LabelFor(m => m.OtherProficienciesAndLangages)
                         @Html.TextAreaFor(m => m.OtherProficienciesAndLangages, new { rows = 16, style = "min-width: 100%", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.OtherProficienciesAndLangages)
@@ -127,7 +127,7 @@
                         @Html.TextAreaFor(m => m.CharacterBackstory, new { rows = 16, style = "min-width: 100%", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.CharacterBackstory)
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         @Html.Partial("Partials/Save/_saveCharacteristics")
 
                         <hr />
@@ -153,7 +153,7 @@
         </div>
     </div>
 
-    <hr />
+    <hr/>
 
     @Html.AntiForgeryToken()
 

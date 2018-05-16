@@ -1,39 +1,52 @@
 ﻿@using NAiME.Models.Character
 @model NAiME.Models.Character.Character
 
-<table class="table table-bordered">
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.CharacterBasics.Age)
-            @Html.TextBoxFor(m => m.CharacterBasics.Age, new { type = "number", min = 1, @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterBasics.Age)
-        </td>
-        <td>
-            @Html.LabelFor(m => m.CharacterBasics.Height)
-            @Html.TextBoxFor(m => m.CharacterBasics.Height, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterBasics.Height)
-        </td>
-        <td>
-            @Html.LabelFor(m => m.CharacterBasics.Weight)
-            @Html.TextBoxFor(m => m.CharacterBasics.Weight, new { type = "number", min = 1, @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterBasics.Weight)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.CharacterBasics.Eyes)
-            @Html.TextBoxFor(m => m.CharacterBasics.Eyes, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterBasics.Eyes)
-        </td>
-        <td>
-            @Html.LabelFor(m => m.CharacterBasics.Skin)
-            @Html.TextBoxFor(m => m.CharacterBasics.Skin, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterBasics.Skin)
-        </td>
-        <td>
-            @Html.LabelFor(m => m.CharacterBasics.Hair)
-            @Html.TextBoxFor(m => m.CharacterBasics.Hair, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.CharacterBasics.Hair)
-        </td>
-    </tr>
-</table>
+<h5>Character Information</h5>
+<div class="container-fluid border rounded text-center">
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterBasics.Age)
+                @Html.TextBoxFor(m => m.CharacterBasics.Age, new { type = "number", min = 1, @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterBasics.Age)
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterBasics.Height)
+                @Html.TextBoxFor(m => m.CharacterBasics.Height, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterBasics.Height)
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterBasics.Weight)
+                @Html.TextBoxFor(m => m.CharacterBasics.Weight, new { type = "number", min = 1, @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterBasics.Weight)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterBasics.Eyes)
+                @Html.TextBoxFor(m => m.CharacterBasics.Eyes, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterBasics.Eyes)
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterBasics.Skin)
+                @Html.TextBoxFor(m => m.CharacterBasics.Skin, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterBasics.Skin)
+            </div>
+        </div>
+        <div class="col border">
+            <div class="form-group">
+                @Html.LabelFor(m => m.CharacterBasics.Hair)
+                @Html.TextBoxFor(m => m.CharacterBasics.Hair, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CharacterBasics.Hair)
+            </div>
+        </div>
+    </div>
+</div>

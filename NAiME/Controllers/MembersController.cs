@@ -32,6 +32,7 @@ namespace NAiME.Controllers
                     UserId = user.Id,
                     Username = user.UserName,
                     user.Email,
+                    user.LastLogin,
                     RoleNames = (from userRole in user.Roles
                         join role in _context.Roles on userRole.RoleId
                             equals role.Id
@@ -41,7 +42,10 @@ namespace NAiME.Controllers
                     UserId = p.UserId,
                     UserName = p.Username,
                     Email = p.Email,
-                    Role = string.Join(",", p.RoleNames)
+                    Role = string.Join(",", p.RoleNames),
+                    LastLogin = p.LastLogin.Year == 1900 ? 
+                        "No Information" : 
+                        p.LastLogin.ToLocalTime().ToLongDateString() + " " + p.LastLogin.ToLocalTime().ToLongTimeString()
                 });
 
 

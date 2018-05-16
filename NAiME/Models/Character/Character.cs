@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NAiME.Models.Character
 {
@@ -10,13 +11,13 @@ namespace NAiME.Models.Character
         [Required]
         public string Name { get; set; }
 
-        [StringLength(200)]
+        [StringLength(200), Index]
         public string CharacterToken { get; set; }
 
-        [StringLength(200)]
+        [StringLength(200), Index]
         public string PlayerToken { get; set; }
 
-        [StringLength(200)]
+        [StringLength(200), Index]
         public string GroupToken { get; set; }
         
         public bool Inspiration { get; set; }

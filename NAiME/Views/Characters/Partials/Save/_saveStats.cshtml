@@ -1,75 +1,84 @@
 ﻿@using NAiME.Models.Character
 @model NAiME.Models.Character.Character
 
-<h3>STATS</h3>
-<!--Stats: Strength-->
-<div class="card bg-light mb-3 " style="max-width: 10rem;">
-    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Strength)</div>
-    <div class="card-body text-center">
-        @Html.TextBoxFor(m => m.CharacterMainStats.Strength, new { type = "number", min = 8, max = 20, id="strCardStart", @class = "form-control text-center" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Strength)
-        <p class="font-weight-bold" id="strCardEnd">0</p>
-    </div>
-</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-12">
+            <!--Stats: Strength-->
+            <div class="card border-primary mb-3 " style="max-width: 15rem;">
+                <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Strength)</div>
+                <div class="card-body text-center">
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Strength, new { type = "number", min = 8, max = 20, id = "strCardStart", @class = "form-control text-center" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Strength)
+                    <p class="font-weight-bold" id="strCardEnd">0</p>
+                </div>
+            </div>
 
-<!--Stats: Dexterity-->
-<div class="card bg-light mb-3 " style="max-width: 10rem;">
-    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Dexterity)</div>
-    <div class="card-body text-center">
-        @Html.TextBoxFor(m => m.CharacterMainStats.Dexterity, new { type = "number", min = 8, max = 20, id = "dexCardStart", @class = "form-control text-center cardStatTarget" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Dexterity)
-        <p class="font-weight-bold" id="dexCardEnd">0</p>
-    </div>
-</div>
+            <!--Stats: Dexterity-->
+            <div class="card border-primary mb-3 " style="max-width: 15rem;">
+                <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Dexterity)</div>
+                <div class="card-body text-center">
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Dexterity, new { type = "number", min = 8, max = 20, id = "dexCardStart", @class = "form-control text-center cardStatTarget" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Dexterity)
+                    <p class="font-weight-bold" id="dexCardEnd">0</p>
+                </div>
+            </div>
 
-<!--Stats: Constitution-->
-<div class="card bg-light mb-3 " style="max-width: 10rem;">
-    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Constitution)</div>
-    <div class="card-body text-center">
-        @Html.TextBoxFor(m => m.CharacterMainStats.Constitution, new { type = "number", min = 8, max = 20, id = "conCardStart", @class = "form-control text-center cardStatTarget" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Constitution)
-        <p class="font-weight-bold" id="conCardEnd">0</p>
-    </div>
-</div>
+            <!--Stats: Constitution-->
+            <div class="card border-primary mb-3 " style="max-width: 15rem;">
+                <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Constitution)</div>
+                <div class="card-body text-center">
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Constitution, new { type = "number", min = 8, max = 20, id = "conCardStart", @class = "form-control text-center cardStatTarget" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Constitution)
+                    <p class="font-weight-bold" id="conCardEnd">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-12">
+            <!--Stats: Intelligence-->
+            <div class="card border-primary mb-3 " style="max-width: 15rem;">
+                <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Intelligence)</div>
+                <div class="card-body text-center">
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Intelligence, new { type = "number", min = 8, max = 20, id = "intCardStart", @class = "form-control text-center cardStatTarget" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Intelligence)
+                    <p class="font-weight-bold" id="intCardEnd">0</p>
+                </div>
+            </div>
 
-<!--Stats: Intelligence-->
-<div class="card bg-light mb-3 " style="max-width: 10rem;">
-    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Intelligence)</div>
-    <div class="card-body text-center">
-        @Html.TextBoxFor(m => m.CharacterMainStats.Intelligence, new { type = "number", min = 8, max = 20, id = "intCardStart", @class = "form-control text-center cardStatTarget" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Intelligence)
-        <p class="font-weight-bold" id="intCardEnd">0</p>
-    </div>
-</div>
+            <!--Stats: Wisdom-->
+            <div class="card border-primary mb-3 " style="max-width: 15rem;">
+                <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Wisdom)</div>
+                <div class="card-body text-center">
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Wisdom, new { type = "number", min = 8, max = 20, id = "wisCardStart", @class = "form-control text-center cardStatTarget" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Wisdom)
+                    <p class="font-weight-bold" id="wisCardEnd">0</p>
+                </div>
+            </div>
 
-<!--Stats: Wisdom-->
-<div class="card bg-light mb-3 " style="max-width: 10rem;">
-    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Wisdom)</div>
-    <div class="card-body text-center">
-        @Html.TextBoxFor(m => m.CharacterMainStats.Wisdom, new { type = "number", min = 8, max = 20, id = "wisCardStart", @class = "form-control text-center cardStatTarget" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Wisdom)
-        <p class="font-weight-bold" id="wisCardEnd">0</p>
-    </div>
-</div>
-
-<!--Stats: Charisma-->
-<div class="card bg-light mb-3 " style="max-width: 10rem;">
-    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Charisma)</div>
-    <div class="card-body text-center">
-        @Html.TextBoxFor(m => m.CharacterMainStats.Charisma, new { type = "number", min = 8, max = 20, id = "chaCardStart", @class = "form-control text-center cardStatTarget" })
-        @Html.ValidationMessageFor(m => m.CharacterMainStats.Charisma)
-        <p class="font-weight-bold" id="chaCardEnd">0</p>
-    </div>
-</div>
-@if (Model.Id > 0)
-{
-    <!--Stats: Shadow-->
-    <div class="card bg-light mb-3 " style="max-width: 10rem;">
-        <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Shadow)</div>
-        <div class="card-body text-center">
-            @Html.TextBoxFor(m => m.CharacterMainStats.Shadow, new { type = "number", min = 0, max = 4, @class = "form-control text-center" })
-            @Html.ValidationMessageFor(m => m.CharacterMainStats.Shadow)
+            <!--Stats: Charisma-->
+            <div class="card border-primary mb-3 " style="max-width: 15rem;">
+                <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Charisma)</div>
+                <div class="card-body text-center">
+                    @Html.TextBoxFor(m => m.CharacterMainStats.Charisma, new { type = "number", min = 8, max = 20, id = "chaCardStart", @class = "form-control text-center cardStatTarget" })
+                    @Html.ValidationMessageFor(m => m.CharacterMainStats.Charisma)
+                    <p class="font-weight-bold" id="chaCardEnd">0</p>
+                </div>
+            </div>
         </div>
     </div>
-}
-
+    <div class="row">
+        @if (Model.Id > 0)
+        {
+            <div class="col-md-12">
+                <!--Stats: Shadow-->
+                <div class="card border-danger mb-3 " style="max-width: 15rem;">
+                    <div class="card-header text-center">@Html.LabelFor(m => m.CharacterMainStats.Shadow)</div>
+                    <div class="card-body text-center">
+                        @Html.TextBoxFor(m => m.CharacterMainStats.Shadow, new { type = "number", min = 0, max = 4, @class = "form-control text-center" })
+                        @Html.ValidationMessageFor(m => m.CharacterMainStats.Shadow)
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

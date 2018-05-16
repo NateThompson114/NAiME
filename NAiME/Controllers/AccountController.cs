@@ -78,6 +78,8 @@ namespace NAiME.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    _context.Users.Single(u => u.UserName == model.UserName).LastLogin = DateTime.Now;
+                    _context.SaveChanges();
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

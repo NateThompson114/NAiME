@@ -260,6 +260,14 @@
     <Compile Include="Migrations\201805132105423_AddedDTandHDs.Designer.cs">
       <DependentUpon>201805132105423_AddedDTandHDs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805152133089_AddLastLoginToAspNetUsersTable.cs" />
+    <Compile Include="Migrations\201805152133089_AddLastLoginToAspNetUsersTable.Designer.cs">
+      <DependentUpon>201805152133089_AddLastLoginToAspNetUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805152307306_AddedIndexingOnCharacterToken.cs" />
+    <Compile Include="Migrations\201805152307306_AddedIndexingOnCharacterToken.Designer.cs">
+      <DependentUpon>201805152307306_AddedIndexingOnCharacterToken.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\CharacterBasics.cs" />
@@ -712,6 +720,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805132105423_AddedDTandHDs.resx">
       <DependentUpon>201805132105423_AddedDTandHDs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805152133089_AddLastLoginToAspNetUsersTable.resx">
+      <DependentUpon>201805152133089_AddLastLoginToAspNetUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805152307306_AddedIndexingOnCharacterToken.resx">
+      <DependentUpon>201805152307306_AddedIndexingOnCharacterToken.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
