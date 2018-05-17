@@ -19,6 +19,9 @@ namespace NAiME.Models.Character
 
         [StringLength(200), Index]
         public string GroupToken { get; set; }
+
+        [StringLength(20)]
+        public string Class { get; set; }
         
         public bool Inspiration { get; set; }
 

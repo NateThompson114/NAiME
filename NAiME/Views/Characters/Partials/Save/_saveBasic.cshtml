@@ -1,13 +1,33 @@
 ﻿@using NAiME.Models.Character
 @model NAiME.Models.Character.Character
 
+<h5 class="text-center">Basic Character Info</h5>
+
+<div class="container-fluid border rounded">
+    <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-8 form-group">
+            @Html.LabelFor(m => m.Class)
+            @Html.TextBoxFor(m => m.Class, new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.Class)
+        </div>
+
+        <div class="col-4 form-group">
+            @Html.LabelFor(m => m.CharacterLevel.Level)
+            @Html.TextBoxFor(m => m.CharacterLevel.Level, new {type = "number", min = "0", max = "20", @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.CharacterLevel.Level)
+        </div>
+    </div>
+</div>
+
 <table class="table table-bordered">
     <tr>
         <td>
             <div class="row">
                 <div class="col-md-8 form-group">
-                    <label>Class</label>
-                    <input name="Class" readonly value="Test" class="form-control" />
+                    @Html.LabelFor(m => m.Class)
+                    @Html.TextBoxFor(m => m.Class, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Class)
                 </div>
 
                 <div class="col-md-4 form-group">

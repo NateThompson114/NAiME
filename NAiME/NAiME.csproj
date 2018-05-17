@@ -268,6 +268,10 @@
     <Compile Include="Migrations\201805152307306_AddedIndexingOnCharacterToken.Designer.cs">
       <DependentUpon>201805152307306_AddedIndexingOnCharacterToken.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805170005242_AddedClassColumnToCharacterTable.cs" />
+    <Compile Include="Migrations\201805170005242_AddedClassColumnToCharacterTable.Designer.cs">
+      <DependentUpon>201805170005242_AddedClassColumnToCharacterTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeLog.cs" />
     <Compile Include="Models\Character\CharacterBasics.cs" />
@@ -726,6 +730,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805152307306_AddedIndexingOnCharacterToken.resx">
       <DependentUpon>201805152307306_AddedIndexingOnCharacterToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805170005242_AddedClassColumnToCharacterTable.resx">
+      <DependentUpon>201805170005242_AddedClassColumnToCharacterTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

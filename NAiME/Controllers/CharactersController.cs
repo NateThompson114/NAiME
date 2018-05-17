@@ -99,6 +99,7 @@ namespace NAiME.Controllers
                 //CharacterToken
                 //PlayerToken
                 //GroupToken
+                characterInDb.Class = character.Class;
                 characterInDb.Inspiration = character.Inspiration;
                 characterInDb.ArmourClass = character.ArmourClass;
                 characterInDb.Speed = character.Speed;
