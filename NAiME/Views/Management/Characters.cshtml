@@ -1,0 +1,21 @@
+﻿@model System.Data.Entity.DbSet<NAiME.Models.Character.Character>
+@{
+}
+
+<h3>Characters</h3>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var character in Model)
+    {
+        <tr>
+            <td>@character.Name</td>
+        </tr>
+    }
+    </tbody>
+</table>

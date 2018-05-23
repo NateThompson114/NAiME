@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -18,8 +19,22 @@ namespace NAiME
     {
         public Task SendAsync(IdentityMessage message)
         {
+            var email =
+                new MailMessage(new MailAddress("aza@azastudio.net", "(do not reply)"),
+                    new MailAddress(message.Destination))
+                {
+                    Subject = message.Subject,
+                    Body = message.Body,
+                    IsBodyHtml = true
+                };
+
+            var client = new SmtpClient();
+            client.SendCompleted += (s, e) => {
+                client.Dispose();
+            };
+
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            return client.SendMailAsync(email);
         }
     }
 

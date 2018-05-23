@@ -153,5 +153,13 @@ namespace NAiME.Controllers
 
             return RedirectToAction("Index", "Characters");
         }
+
+        [Authorize(Roles = RoleName.Admin)]
+        public ActionResult ManageAllCharacters()
+        {
+            var characters = _context.Characters;
+
+            return View(characters);
+        }
     }
 }
